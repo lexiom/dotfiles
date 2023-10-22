@@ -25,6 +25,9 @@ end
 --   SHELL = '/home/linuxbrew/.linuxbrew/bin/nu',
 -- }
 
+-- disable missing glyphs warning
+config.warn_about_missing_glyphs = false
+
 -- default shell
 config.default_prog = { "/home/linuxbrew/.linuxbrew/bin/fish" }
 

@@ -9,7 +9,7 @@ vim.opt.relativenumber = false
 vim.opt.list = false
 
 -- set python host
-vim.g.python3_host_prog = '/home/linuxbrew/.linuxbrew/bin/python3'
+vim.g.python3_host_prog = "/home/linuxbrew/.linuxbrew/bin/python3"
 
 -- set virtual edit to only highlight text, which is vim's default behavior
 -- this was necessary to change because lazyvim sets it to "block" by default
