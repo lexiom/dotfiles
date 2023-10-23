@@ -1,0 +1,9 @@
+clojure/tools/clojure
+fd
+libpq
+mongosh
+neovim
+node
+openjdk
+poetry
+ripgrep

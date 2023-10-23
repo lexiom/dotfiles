@@ -1,36 +1,6 @@
 return {
   {
-    "nvim-neo-tree/neo-tree.nvim",
-    enable = false,
-    cond = false,
-  },
-  {
-    "lewis6991/gitsigns.nvim",
-    enable = false,
-    cond = false,
-  },
-  {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    enable = false,
-    cond = false,
-  },
-  {
-    "nvim-pack/nvim-spectre",
-    enable = false,
-    cond = false,
-  },
-  {
-    "folke/todo-comments.nvim",
-    enable = false,
-    cond = false,
-  },
-  {
-    "rcarriga/nvim-notify",
-    enable = false,
-    cond = false,
-  },
-  {
-    "stevearc/dressing.nvim",
+    "goolord/alpha-nvim",
     enable = false,
     cond = false,
   },
@@ -45,7 +15,42 @@ return {
     cond = false,
   },
   {
-    "goolord/alpha-nvim",
+    "stevearc/dressing.nvim",
+    enable = false,
+    cond = false,
+  },
+  {
+    "rafamadriz/friendly-snippets",
+    enable = false,
+    cond = false,
+  },
+  {
+    "lewis6991/gitsigns.nvim",
+    enable = false,
+    cond = false,
+  },
+  {
+    "nvim-neo-tree/neo-tree.nvim",
+    enable = false,
+    cond = false,
+  },
+  {
+    "rcarriga/nvim-notify",
+    enable = false,
+    cond = false,
+  },
+  {
+    "nvim-pack/nvim-spectre",
+    enable = false,
+    cond = false,
+  },
+  {
+    "JoosepAlviste/nvim-ts-context-commentstring",
+    enable = false,
+    cond = false,
+  },
+  {
+    "folke/todo-comments.nvim",
     enable = false,
     cond = false,
   },
