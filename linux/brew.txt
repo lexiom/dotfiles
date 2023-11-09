@@ -1,4 +1,5 @@
 clojure/tools/clojure
+elixir
 fd
 libpq
 mongosh
