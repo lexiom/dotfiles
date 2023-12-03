@@ -36,11 +36,3 @@ fi
 # set xdg config path
 export XDG_CONFIG_HOME="/home/alexandre/.config"
 
-# go binaries (system-wide)
-# export PATH="/usr/local/go/bin:$PATH"
-
-# set go home directory
-# export GOPATH="$XDG_CONFIG_HOME/.go"
-
-# go binaries (local)
-# export PATH="$GOPATH/bin:$PATH"

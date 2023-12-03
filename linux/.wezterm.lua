@@ -38,7 +38,13 @@ config.default_cursor_style = "SteadyBar"
 -- config.cursor_blink_ease_out = "Constant"
 
 -- font
-config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Medium" })
+-- config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Medium" })
+config.font = wezterm.font({
+	family = "JetBrainsMono Nerd Font Mono",
+	weight = "Medium",
+	-- disable ligatures
+	harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+})
 config.font_size = 13
 
 -- disabling wayland
