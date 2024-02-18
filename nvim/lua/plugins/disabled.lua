@@ -1,10 +1,5 @@
 return {
   {
-    "goolord/alpha-nvim",
-    enable = false,
-    cond = false,
-  },
-  {
     "akinsho/bufferline.nvim",
     enable = false,
     cond = false,
@@ -16,11 +11,6 @@ return {
   },
   {
     "stevearc/dressing.nvim",
-    enable = false,
-    cond = false,
-  },
-  {
-    "rafamadriz/friendly-snippets",
     enable = false,
     cond = false,
   },

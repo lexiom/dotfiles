@@ -1,0 +1,15 @@
+[env]
+# builds Erlang/OTP with docs
+KERL_BUILD_DOCS = 'yes'
+
+[tools]
+erlang = "26"
+elixir = "1.16"
+poetry = "latest"
+python = "3.12"
+node = "21"
+awscli = "latest"
+rust = "latest"
+
+[settings]
+experimental = true

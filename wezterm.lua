@@ -1,15 +1,15 @@
 local wezterm = require("wezterm")
 
 -- maximize at startup
-local mux = wezterm.mux
-wezterm.on("gui-attached", function(domain)
-	local workspace = mux.get_active_workspace()
-	for _, window in ipairs(mux.all_windows()) do
-		if window:get_workspace() == workspace then
-			window:gui_window():maximize()
-		end
-	end
-end)
+--local mux = wezterm.mux
+--wezterm.on("gui-attached", function(domain)
+--	local workspace = mux.get_active_workspace()
+--	for _, window in ipairs(mux.all_windows()) do
+--		if window:get_workspace() == workspace then
+--			window:gui_window():maximize()
+--		end
+--	end
+--end)
 
 -- customize settings
 local config = {}
@@ -18,6 +18,8 @@ local config = {}
 if wezterm.config_builder then
 	config = wezterm.config_builder()
 end
+
+config.window_background_opacity = 0.75
 
 -- setting environment variables
 -- config.set_environment_variables = {
@@ -29,16 +31,15 @@ end
 config.warn_about_missing_glyphs = false
 
 -- default shell
-config.default_prog = { "/home/linuxbrew/.linuxbrew/bin/fish" }
+config.default_prog = { "fish" }
 
 -- default cursor style
-config.default_cursor_style = "SteadyBar"
--- config.animation_fps = 1
--- config.cursor_blink_ease_in = "Constant"
--- config.cursor_blink_ease_out = "Constant"
+config.default_cursor_style = "BlinkingBlock"
+config.animation_fps = 1
+config.cursor_blink_ease_in = "Constant"
+config.cursor_blink_ease_out = "Constant"
 
 -- font
--- config.font = wezterm.font("JetBrainsMono Nerd Font Mono", { weight = "Medium" })
 config.font = wezterm.font({
 	family = "JetBrainsMono Nerd Font Mono",
 	weight = "Medium",
@@ -47,11 +48,11 @@ config.font = wezterm.font({
 })
 config.font_size = 13
 
--- disabling wayland
--- config.enable_wayland = false
+-- enabling wayland
+config.enable_wayland = true
 
 -- disabling window decorations
-config.window_decorations = "RESIZE"
+-- config.window_decorations = "RESIZE"
 
 -- disabling the new tab (+) button
 config.show_new_tab_button_in_tab_bar = false
@@ -76,6 +77,7 @@ config.window_frame = {
 -- more tab bar colors and font settings
 config.colors = {
 	background = "#222436",
+	cursor_border = "#000000",
 	tab_bar = {
 		active_tab = {
 			-- the color of the background area for the tab
@@ -117,13 +119,13 @@ config.colors = {
 -- key binding
 config.keys = {
 	{
-		key = "LeftArrow",
-		mods = "CTRL|SHIFT",
+		key = "h",
+		mods = "CTRL|ALT",
 		action = wezterm.action.ActivateTabRelative(-1),
 	},
 	{
-		key = "RightArrow",
-		mods = "CTRL|SHIFT",
+		key = "l",
+		mods = "CTRL|ALT",
 		action = wezterm.action.ActivateTabRelative(1),
 	},
 	{
@@ -137,14 +139,9 @@ config.keys = {
 		action = wezterm.action.DisableDefaultAssignment,
 	},
 	{
-		key = "LeftArrow",
-		mods = "CTRL|ALT|SHIFT",
-		action = wezterm.action.ActivatePaneDirection("Left"),
-	},
-	{
-		key = "RightArrow",
-		mods = "CTRL|ALT|SHIFT",
-		action = wezterm.action.ActivatePaneDirection("Right"),
+		key = "T",
+		mods = "CTRL|SHIFT",
+		action = wezterm.action.DisableDefaultAssignment,
 	},
 }
 
