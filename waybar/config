@@ -18,6 +18,7 @@
         "pulseaudio",
         "backlight",
         "battery",
+        "custom/lock",
         "custom/reset",
         "custom/power",
     ],
@@ -134,6 +135,11 @@
             "critical": 10,
             "warning": 20,
         },
+        "tooltip": false,
+    },
+    "custom/lock": {
+        "format": "",
+        "on-click": "swaylock -c '#000000'",
         "tooltip": false,
     },
     "custom/reset": {

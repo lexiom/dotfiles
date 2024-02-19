@@ -65,6 +65,7 @@ window#waybar.hidden {
 #pulseaudio,
 #backlight,
 #battery,
+#custom-lock,
 #custom-reset,
 #custom-power,
 #tray {
@@ -143,13 +144,17 @@ window#waybar.hidden {
   color: #ffffff;
 }
 
+#custom-lock {
+  color: #89c2ff;
+}
+
 #custom-reset {
-  color: #9d7cd8;
+  color: #c489ff;
 }
 
 #custom-power {
   margin-right: 6px;
-  color: #f7768e;
+  color: #ff8989;
 }
 
 tooltip {
