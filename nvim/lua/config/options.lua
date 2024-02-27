@@ -19,4 +19,4 @@ opt.virtualedit = ""
 opt.conceallevel = 0
 
 -- set python host
-vim.g.python3_host_prog = "/home/alexandre/.local/share/mise/installs/python/3.12/bin/python"
+vim.g.python3_host_prog = "/home/alexandre/.config/python/bin/python3"

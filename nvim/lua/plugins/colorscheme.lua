@@ -1,5 +1,15 @@
 return {
   {
+    "folke/tokyonight.nvim",
+    opts = {
+      transparent = true,
+      styles = {
+        sidebars = "transparent",
+        floats = "transparent",
+      },
+    },
+  },
+  {
     "HiPhish/rainbow-delimiters.nvim",
     config = function()
       -- This module contains a number of default definitions

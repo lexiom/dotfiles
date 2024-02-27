@@ -2,7 +2,6 @@ if status is-interactive
     # Commands to run in interactive sessions can go here
 end
 
-# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+set -gx PATH "$HOME/.local/bin" $PATH
 starship init fish | source
-/home/alexandre/.local/bin/mise activate fish | source
-
