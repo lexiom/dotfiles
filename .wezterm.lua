@@ -1,31 +1,18 @@
 local wezterm = require("wezterm")
 
--- maximize at startup
---local mux = wezterm.mux
---wezterm.on("gui-attached", function(domain)
---	local workspace = mux.get_active_workspace()
---	for _, window in ipairs(mux.all_windows()) do
---		if window:get_workspace() == workspace then
---			window:gui_window():maximize()
---		end
---	end
---end)
-
 -- customize settings
 local config = {}
 
 -- error reporting
 if wezterm.config_builder then
-	config = wezterm.config_builder()
+    config = wezterm.config_builder()
 end
 
-config.window_background_opacity = 0.75
+config.initial_rows = 100
+config.initial_cols = 100
 
--- setting environment variables
--- config.set_environment_variables = {
---   setting the default shell
---   SHELL = '/home/linuxbrew/.linuxbrew/bin/nu',
--- }
+-- make window slightly transparent
+config.window_background_opacity = 0.75
 
 -- disable missing glyphs warning
 config.warn_about_missing_glyphs = false
@@ -38,6 +25,7 @@ config.default_cursor_style = "BlinkingBlock"
 config.animation_fps = 1
 config.cursor_blink_ease_in = "Constant"
 config.cursor_blink_ease_out = "Constant"
+config.hide_mouse_cursor_when_typing = false
 
 -- font
 config.font = wezterm.font({
@@ -52,7 +40,7 @@ config.font_size = 13
 config.enable_wayland = true
 
 -- disabling window decorations
--- config.window_decorations = "RESIZE"
+config.window_decorations = "RESIZE"
 
 -- disabling the new tab (+) button
 config.show_new_tab_button_in_tab_bar = false
