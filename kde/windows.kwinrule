@@ -1,0 +1,73 @@
+[Always Maximize]
+Description=Always Maximize
+clientmachine=localhost
+maximizehoriz=true
+maximizehorizrule=3
+maximizevert=true
+maximizevertrule=3
+types=1
+wmclassmatch=1
+
+[Browser Desktop]
+Description=Browser Desktop
+clientmachine=localhost
+desktops=6487921f-de4b-4d29-8563-59253cdea140
+desktopsrule=3
+maximizehoriz=true
+maximizevert=true
+wmclass=thorium-browser Thorium-browser
+wmclasscomplete=true
+wmclassmatch=1
+
+[Editor Desktop]
+Description=Editor Desktop
+clientmachine=localhost
+desktops=c9e6cd18-ba5e-470b-918e-fd2c6a26abc0
+desktopsrule=3
+maximizehoriz=true
+maximizevert=true
+wmclass=code code-url-handler
+wmclasscomplete=true
+wmclassmatch=1
+
+[Explorer Desktop]
+Description=Explorer Desktop
+clientmachine=localhost
+desktops=08b73c1b-85fa-47fd-b8a9-d9ab2d34d9f2
+desktopsrule=3
+maximizehoriz=true
+maximizevert=true
+wmclass=dolphin org.kde.dolphin
+wmclasscomplete=true
+wmclassmatch=1
+
+[Player Desktop]
+Description=Player Desktop
+clientmachine=localhost
+desktops=df0ff53b-b5a5-46d7-9a02-0565630891b5
+desktopsrule=3
+maximizehoriz=true
+maximizevert=true
+wmclass=youtube music YouTube Music
+wmclasscomplete=true
+wmclassmatch=1
+
+[Secrets Desktop]
+Description=Secrets Desktop
+clientmachine=localhost
+desktops=08b73c1b-85fa-47fd-b8a9-d9ab2d34d9f2
+desktopsrule=3
+maximizehoriz=true
+maximizevert=true
+wmclass=\sorg.keepassxc.KeePassXC
+wmclasscomplete=true
+wmclassmatch=1
+
+[Terminal Desktop]
+Description=Terminal Desktop
+clientmachine=localhost
+desktops=08b73c1b-85fa-47fd-b8a9-d9ab2d34d9f2
+desktopsrule=3
+wmclass=alacritty Alacritty
+wmclasscomplete=true
+wmclassmatch=1

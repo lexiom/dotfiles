@@ -1,17 +1,20 @@
 {
     "editor.fontFamily": "'JetBrainsMono Nerd Font Mono', 'monospace', monospace",
     "editor.fontSize": 16,
+    "editor.fontWeight": "500",
+    "extensions.ignoreRecommendations": true,
     "git.enabled": false,
     "keyboard.dispatch": "keyCode",
+    "telemetry.telemetryLevel": "off",
     "terminal.external.linuxExec": "fish",
+    "terminal.integrated.defaultLocation": "editor",
     "terminal.integrated.defaultProfile.linux": "fish",
     "terminal.integrated.profiles.linux": {
-        "bash": null,
         "fish": {
             "path": "/usr/bin/fish"
         }
     },
     "vim.useSystemClipboard": true,
     "window.titleBarStyle": "custom",
-    "workbench.colorTheme": "Catppuccin Mocha",
+    "workbench.colorTheme": "Catppuccin Mocha"
 }

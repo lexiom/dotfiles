@@ -1,0 +1,47 @@
+[Alacritty.desktop][Global Shortcuts]
+New=
+_launch=Meta+T
+
+[code.desktop][Global Shortcuts]
+_launch=Meta+V
+new-empty-window=
+
+[kmix][Global Shortcuts]
+decrease_microphone_volume=Microphone Volume Down
+decrease_volume=Volume Down
+decrease_volume_small=Shift+Volume Down
+increase_microphone_volume=Microphone Volume Up
+increase_volume=Volume Up
+increase_volume_small=Shift+Volume Up
+mic_mute=Meta+C; Microphone Mute
+mute=Volume Mute
+
+[org.kde.dolphin.desktop][Global Shortcuts]
+_launch=Meta+F
+
+[org.kde.spectacle.desktop][Global Shortcuts]
+ActiveWindowScreenShot=
+CurrentMonitorScreenShot=
+FullScreenScreenShot=
+OpenWithoutScreenshot=
+RecordRegion=
+RecordScreen=
+RecordWindow=
+RectangularRegionScreenShot=Print
+WindowUnderCursorScreenShot=
+_launch=
+
+[org.keepassxc.KeePassXC.desktop][Global Shortcuts]
+_launch=Meta+G
+
+[thorium-browser.desktop][Global Shortcuts]
+_launch=Meta+B
+content-shell=
+dark-mode=
+new-private-window=
+new-window=
+safe-mode=
+temp-profile=
+
+[youtube-music.desktop][Global Shortcuts]
+_launch=Meta+R
