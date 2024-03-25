@@ -59,7 +59,7 @@
         "tooltip": false,
     },
     "clock": {
-        "format": "{:%H}",
+        "format": "{:%Y/%m/%d  %I:%M %p}",
         "on-click": "gnome-calendar",
     },
     "tray": {

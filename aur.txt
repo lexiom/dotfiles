@@ -1,0 +1,4 @@
+rofi-lbonn-wayland
+thorium-browser-bin
+visual-studio-code
+youtube-music-bin
