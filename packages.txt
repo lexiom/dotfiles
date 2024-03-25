@@ -25,7 +25,6 @@ vim
 visual-studio-code
 waybar
 wl-clipboard
-wofi
 xdg-desktop-portal-gtk
 xdg-desktop-portal-hyprland
 youtube-music-bin
