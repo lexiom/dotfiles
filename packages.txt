@@ -1,5 +1,4 @@
 alacritty
-ttf-dejavu
 dunst
 fish
 git
@@ -20,7 +19,9 @@ polkit-kde-agent
 rofi-lbonn-wayland
 starship
 thorium-browser-bin
+ttf-dejavu
 ttf-jetbrains-mono-nerd
+ttf-nerd-fonts-symbols
 unzip
 vim
 visual-studio-code
