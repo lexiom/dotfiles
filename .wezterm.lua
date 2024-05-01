@@ -32,15 +32,15 @@ config.hide_mouse_cursor_when_typing = false
 
 -- font
 config.font = wezterm.font({
-	family = "UbuntuMono Nerd Font Mono",
-	weight = "Medium",
+	family = "UbuntuSansMono Nerd Font Mono",
+	-- weight = 500,
 	-- disable ligatures
 	-- harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
-config.font_size = 13.5
-config.freetype_load_flags = "NO_HINTING"
-config.freetype_load_target = "Light"
-config.freetype_render_target = "Light"
+config.font_size = 13
+-- config.freetype_load_flags = "NO_HINTING"
+-- config.freetype_load_target = "Light"
+-- config.freetype_render_target = "Light"
 
 -- enabling wayland
 config.enable_wayland = true

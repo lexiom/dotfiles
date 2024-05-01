@@ -1,5 +1,5 @@
 {
-  description = "Python Environment v0.1";
+  description = "Go Development Environment";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
@@ -13,15 +13,16 @@
       };
     in {
       default = pkgs.stdenv.mkDerivation {
-        name = "hello_nix_flakes";
+        name = "golang_flake";
         src = ./.;
 
         nativeBuildInputs = with pkgs; [
-          (python3.withPackages (ps: [ps.pynvim]))
-          pdm
-          nodejs
-          curl
-          jq
+          go
+          go-outline
+          gopls
+          gopkgs
+          go-tools
+          delve
         ];
       };
     };

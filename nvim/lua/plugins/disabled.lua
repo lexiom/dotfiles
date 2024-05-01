@@ -36,6 +36,10 @@ return {
     cond = false,
   },
   {
+    "L3MON4D3/LuaSnip",
+    cond = false,
+  },
+  {
     "lewis6991/gitsigns.nvim",
     cond = false,
   },
@@ -57,6 +61,10 @@ return {
   },
   {
     "nvimdev/dashboard-nvim",
+    cond = false,
+  },
+  {
+    "rafamadriz/friendly-snippets",
     cond = false,
   },
   {
