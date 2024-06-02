@@ -13,6 +13,7 @@ return {
       ---@type lspconfig.options
       servers = {
         nil_ls = {},
+        zls = {},
       },
     },
   },

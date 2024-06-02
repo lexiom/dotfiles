@@ -6,6 +6,7 @@ return {
         "dockerfile",
         "nix",
         "sql",
+        "zig",
       })
       -- Disable treesitter for large files
       opts.highlight = {

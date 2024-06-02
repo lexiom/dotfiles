@@ -20,3 +20,6 @@ opt.conceallevel = 0
 
 -- set python host
 vim.g.python3_host_prog = "python"
+
+-- set clipboard behavior
+vim.o.clipboard = "unnamedplus"
