@@ -1,8 +1,8 @@
 {
-  description = "Python Environment v0.1";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
+
   outputs = {
     self,
     nixpkgs,
@@ -13,15 +13,18 @@
       };
     in {
       default = pkgs.stdenv.mkDerivation {
-        name = "python_flake";
+        name = "elixir_flake";
         src = ./.;
 
+        env = {
+          ELIXIR_ERL_OPTIONS = "+fnu";
+        };
+
         nativeBuildInputs = with pkgs; [
-          (python3.withPackages (ps: [ps.pynvim]))
-          pdm
-          nodejs
+          elixir
           curl
           jq
+          nodejs
         ];
       };
     };

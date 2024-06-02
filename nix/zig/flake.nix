@@ -1,5 +1,5 @@
 {
-  description = "Python Environment v0.1";
+  description = "Zig Development Environment";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
@@ -13,15 +13,11 @@
       };
     in {
       default = pkgs.stdenv.mkDerivation {
-        name = "python_flake";
+        name = "zig_flake";
         src = ./.;
 
         nativeBuildInputs = with pkgs; [
-          (python3.withPackages (ps: [ps.pynvim]))
-          pdm
-          nodejs
-          curl
-          jq
+          zig
         ];
       };
     };

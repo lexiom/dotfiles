@@ -13,7 +13,7 @@
       };
     in {
       default = pkgs.stdenv.mkDerivation {
-        name = "golang_flake";
+        name = "go_flake";
         src = ./.;
 
         nativeBuildInputs = with pkgs; [
