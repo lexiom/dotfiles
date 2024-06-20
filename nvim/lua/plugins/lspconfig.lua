@@ -1,19 +1,24 @@
 return {
   {
     "neovim/nvim-lspconfig",
-    dependencies = {
-      { "folke/neoconf.nvim", cmd = "Neoconf", config = false, dependencies = { "nvim-lspconfig" } },
-      { "folke/neodev.nvim", opts = {} },
-      "mason.nvim",
-      "williamboman/mason-lspconfig.nvim",
-    },
-    ---@class PluginLspOpts
     opts = {
-      -- LSP Server Settings
-      ---@type lspconfig.options
       servers = {
         nil_ls = {},
-        zls = {},
+        zls = {
+          -- settings = {
+          --   semantic_tokens = "full",
+          --   warn_style = false,
+          --   highlight_global_var_declarations = false,
+          --   enable_inlay_hints = true,
+          --   inlay_hints_show_builtin = true,
+          --   inlay_hints_exclude_single_argument = true,
+          --   inlay_hints_hide_redundant_param_names = true,
+          --   inlay_hints_hide_redundant_param_names_last_token = true,
+          --   dangerous_comptime_experiments_do_not_enable = true,
+          --   skip_std_references = true,
+          --   record_session = true,
+          -- },
+        },
       },
     },
   },

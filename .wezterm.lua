@@ -15,7 +15,7 @@ config.front_end = "WebGpu"
 -- config.initial_cols = 100
 
 -- make window slightly transparent
-config.window_background_opacity = 0.75
+config.window_background_opacity = 0.9
 
 -- disable missing glyphs warning
 config.warn_about_missing_glyphs = false
@@ -37,7 +37,7 @@ config.font = wezterm.font({
 	-- disable ligatures
 	-- harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
 })
-config.font_size = 13
+config.font_size = 14
 -- config.freetype_load_flags = "NO_HINTING"
 -- config.freetype_load_target = "Light"
 -- config.freetype_render_target = "Light"

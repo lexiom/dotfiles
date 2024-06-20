@@ -1,0 +1,17 @@
+import = [
+    "~/.config/alacritty/themes/catppuccin_mocha.toml"
+]
+
+shell = { program = "/usr/bin/fish" }
+env = { TERM = "xterm-256color"}
+
+[font]
+normal = { family = "UbuntuSansMono Nerd Font Mono", style = "Medium" }
+# offset = { x = 0, y = 0 }
+size = 14
+
+[window]
+opacity = 0.9
+decorations = "None"
+padding = { x = 10, y = 5 }
+# startp_mode = "Maximized"

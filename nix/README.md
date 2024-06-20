@@ -1,3 +1,10 @@
+# local development environment using nix flakes
+
+- Before doing anything, don´t forget to rename the file you wish to run to `flake.nix`
+- Then, you can run the following command `nix develop`
+- You can find a basic example of a nix flake below:
+
+```nix
 {
   description = "Hello, Nix Flakes!";
   # inputs is where we define the origin of our packages/code
@@ -5,7 +12,7 @@
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
-  # outputs is where we define how the packages/code will be processed
+  # outputs is the function where we define how the packages/code will be processed
   # the self argument is used to reference this particular flake and/or its source
   # the nixpkgs argument means that we are working with a local copy of this object, which
   # was downloaded to our machine (nix/store) after we specified it in the 'inputs' section
@@ -13,8 +20,8 @@
     self,
     nixpkgs,
   }: {
-    # let & in are sections where we define local variables
-    # we import the nixpkgs object (which we got from the function's arguments)
+    # let & in are the places where we define local variables
+    # import the nixpkgs object specified in the function's arguments
     packages."x86_64-linux" = let
       pkgs = import nixpkgs {
         system = "x86_64-linux";
@@ -29,7 +36,7 @@
           pdm
           nodejs
         ];
-        # buildInputs is for dependencies that should exist in the runtime env
+        # buildInputs is for dependencies that should exist in both build and runtime envs
         buildInputs = with pkgs; [
           curl
           jq
@@ -38,3 +45,4 @@
     };
   };
 }
+```

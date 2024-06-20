@@ -1,10 +1,11 @@
 {
   "extras": [
+    "lazyvim.plugins.extras.lang.clangd",
     "lazyvim.plugins.extras.lang.elixir",
     "lazyvim.plugins.extras.lang.python"
   ],
   "news": {
-    "NEWS.md": "5204"
+    "NEWS.md": "6077"
   },
   "version": 6
 }
