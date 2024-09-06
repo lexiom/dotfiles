@@ -18,11 +18,14 @@ opt.virtualedit = ""
 -- disable double quotes concealing in JSON files
 opt.conceallevel = 0
 
+-- disable zig autoformat on save
+vim.g.zig_fmt_autosave = 0
+
 -- set python host
 vim.g.python3_host_prog = "python"
 
--- disable zig auto formatting
-vim.g.zig_fmt_autosave = 0
-
 -- set clipboard behavior
 vim.o.clipboard = "unnamedplus"
+
+-- disable autocomplete on Enter
+-- vim.o.completeopt = "menuone,noselect,preview"

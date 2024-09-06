@@ -36,6 +36,14 @@ return {
     cond = false,
   },
   {
+    "folke/ts-comments.nvim",
+    cond = false,
+  },
+  {
+    "garymjr/nvim-snippets",
+    cond = false,
+  },
+  {
     "L3MON4D3/LuaSnip",
     cond = false,
   },
@@ -43,10 +51,10 @@ return {
     "lewis6991/gitsigns.nvim",
     cond = false,
   },
-  {
-    "JoosepAlviste/nvim-ts-context-commentstring",
-    cond = false,
-  },
+  -- {
+  --   "lukas-reineke/indent-blankline.nvim",
+  --   cond = false,
+  -- },
   {
     "nvim-neo-tree/neo-tree.nvim",
     cond = false,
@@ -69,14 +77,6 @@ return {
   },
   {
     "rcarriga/nvim-notify",
-    cond = false,
-  },
-  {
-    "RRethy/vim-illuminate",
-    cond = false,
-  },
-  {
-    "stevearc/dressing.nvim",
     cond = false,
   },
   {

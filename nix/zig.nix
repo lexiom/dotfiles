@@ -14,11 +14,10 @@
     in {
       default = pkgs.stdenv.mkDerivation {
         name = "zig_flake";
-        src = ./.;
-
         nativeBuildInputs = with pkgs; [
           zig
         ];
+        src = ./.;
       };
     };
   };

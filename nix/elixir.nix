@@ -1,4 +1,5 @@
 {
+  description = "Elixir Development Environment";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
@@ -12,20 +13,18 @@
         system = "x86_64-linux";
       };
     in {
-      default = pkgs.stdenv.mkDerivation {
-        name = "elixir_flake";
-        src = ./.;
-
+      default = pkgs.mkShell {
         env = {
           ELIXIR_ERL_OPTIONS = "+fnu";
         };
-
+        name = "elixir_flake";
         nativeBuildInputs = with pkgs; [
-          elixir
           curl
+          elixir
           jq
-          nodejs
+          nodejs_22
         ];
+        src = ./.;
       };
     };
   };

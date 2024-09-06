@@ -1,5 +1,5 @@
 {
-  description = "Python Environment v0.1";
+  description = "Python Environment";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
@@ -14,15 +14,14 @@
     in {
       default = pkgs.stdenv.mkDerivation {
         name = "python_flake";
-        src = ./.;
-
         nativeBuildInputs = with pkgs; [
           (python3.withPackages (ps: [ps.pynvim]))
-          pdm
-          nodejs
           curl
           jq
+          nodejs_22
+          pdm
         ];
+        src = ./.;
       };
     };
   };

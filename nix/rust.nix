@@ -1,5 +1,5 @@
 {
-  description = "Zig Development Environment";
+  description = "Rust Environment";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
@@ -12,13 +12,15 @@
         system = "x86_64-linux";
       };
     in {
-      default = pkgs.stdenv.mkDerivation {
-        name = "zig_flake";
-        src = ./.;
-
+      default = pkgs.mkShell {
+        name = "rust_flake";
         nativeBuildInputs = with pkgs; [
-          clang
+          cargo
+          curl
+          jq
+          rustc
         ];
+        src = ./.;
       };
     };
   };

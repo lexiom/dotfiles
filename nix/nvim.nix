@@ -1,5 +1,5 @@
 {
-  description = "Go Development Environment";
+  description = "Neovim Build Environment";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
@@ -12,17 +12,15 @@
         system = "x86_64-linux";
       };
     in {
-      default = pkgs.stdenv.mkDerivation {
-        name = "go_flake";
+      default = pkgs.mkShell {
+        name = "nvim_flake";
         nativeBuildInputs = with pkgs; [
+          (python3.withPackages (ps: [ps.pynvim]))
+          cargo
           curl
-          delve
-          go
-          go-outline
-          go-tools
-          gopkgs
-          gopls
+          jq
           nodejs_22
+          rustc
         ];
         src = ./.;
       };
