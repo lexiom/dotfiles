@@ -12,8 +12,7 @@
         system = "x86_64-linux";
       };
     in {
-      default = pkgs.stdenv.mkDerivation {
-        name = "go_flake";
+      default = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
           curl
           delve
@@ -24,7 +23,6 @@
           gopls
           nodejs_22
         ];
-        src = ./.;
       };
     };
   };

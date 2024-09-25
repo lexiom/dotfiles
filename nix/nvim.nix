@@ -13,7 +13,6 @@
       };
     in {
       default = pkgs.mkShell {
-        name = "nvim_flake";
         nativeBuildInputs = with pkgs; [
           (python3.withPackages (ps: [ps.pynvim]))
           cargo
@@ -22,7 +21,6 @@
           nodejs_22
           rustc
         ];
-        src = ./.;
       };
     };
   };

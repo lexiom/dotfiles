@@ -13,10 +13,8 @@
       };
     in {
       default = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
-        env = {
-          CMAKE_EXPORT_COMPILE_COMMANDS = 1;
-        };
-        name = "cpp_flake";
+        CMAKE_EXPORT_COMPILE_COMMANDS = 1;
+        LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
         nativeBuildInputs = with pkgs; [
           # Build deps
           clang
@@ -38,7 +36,6 @@
           cmake
           pkg-config
         ];
-        src = ./.;
       };
     };
   };

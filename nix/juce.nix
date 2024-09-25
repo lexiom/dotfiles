@@ -13,29 +13,9 @@
       };
     in {
       default = pkgs.mkShell.override { stdenv = pkgs.clangStdenv; } {
-        env = {
-          CMAKE_EXPORT_COMPILE_COMMANDS = 1;
-        };
-        name = "juce_flake";
+        CMAKE_EXPORT_COMPILE_COMMANDS = 1;
+        LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
         nativeBuildInputs = with pkgs; [
-          # JUCE deps
-          alsa-lib.dev
-          curl.dev
-          fontconfig.dev
-          freetype.dev
-          jack2.dev
-          ladspa-sdk
-          libGLU.dev
-          mesa.dev
-          webkitgtk.dev
-          xorg.libX11.dev
-          xorg.libXcomposite.dev
-          xorg.libXcursor.dev
-          xorg.libXext.dev
-          xorg.libXinerama.dev
-          xorg.libXrandr.dev
-          xorg.libXrender.dev
-
           # Build deps
           clang
           lerc.dev
@@ -55,8 +35,25 @@
           # Build tools
           cmake
           pkg-config
+
+          # JUCE deps
+          alsa-lib.dev
+          curl.dev
+          fontconfig.dev
+          freetype.dev
+          jack2.dev
+          ladspa-sdk
+          libGLU.dev
+          mesa.dev
+          webkitgtk.dev
+          xorg.libX11.dev
+          xorg.libXcomposite.dev
+          xorg.libXcursor.dev
+          xorg.libXext.dev
+          xorg.libXinerama.dev
+          xorg.libXrandr.dev
+          xorg.libXrender.dev
         ];
-        src = ./.;
       };
     };
   };

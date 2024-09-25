@@ -13,14 +13,12 @@
       };
     in {
       default = pkgs.mkShell {
-        name = "rust_flake";
         nativeBuildInputs = with pkgs; [
           cargo
           curl
           jq
           rustc
         ];
-        src = ./.;
       };
     };
   };

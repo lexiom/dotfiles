@@ -1,5 +1,7 @@
+# xdelta -d -s original_file xdelta_file output_file
+# cmp --silent $old $new || echo "files are different"
 {
-  description = "Elixir Development Environment";
+  description = "Xdelta Environment";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
@@ -13,12 +15,8 @@
       };
     in {
       default = pkgs.mkShell {
-        ELIXIR_ERL_OPTIONS = "+fnu";
         nativeBuildInputs = with pkgs; [
-          curl
-          elixir
-          jq
-          nodejs_22
+            xdelta
         ];
       };
     };

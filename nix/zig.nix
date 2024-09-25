@@ -12,12 +12,10 @@
         system = "x86_64-linux";
       };
     in {
-      default = pkgs.stdenv.mkDerivation {
-        name = "zig_flake";
+      default = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
           zig
         ];
-        src = ./.;
       };
     };
   };
