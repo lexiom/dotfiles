@@ -117,7 +117,7 @@ config.keys = {
 		action = wezterm.action.ActivateTabRelative(1),
 	},
 	{
-		key = "t",
+		key = "j",
 		mods = "LEADER",
 		action = wezterm.action.SpawnTab "CurrentPaneDomain",
 	},
