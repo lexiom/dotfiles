@@ -1,0 +1,5 @@
+[[language]]
+name = "python"
+# formatter = { command = "ruff", args = ["format", "--line-length", "88", "-"] }
+# language-servers = ["jedi", "pylsp"]
+auto-format = true
