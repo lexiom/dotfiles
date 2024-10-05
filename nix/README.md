@@ -1,4 +1,4 @@
-# local development environment using nix flakes
+# Local development environment using nix flakes
 
 - Before doing anything, don´t forget to rename the file you wish to run to `flake.nix`
 - Then, you can run the following command `nix develop`
