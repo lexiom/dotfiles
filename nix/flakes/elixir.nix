@@ -15,10 +15,7 @@
       default = pkgs.mkShell {
         ELIXIR_ERL_OPTIONS = "+fnu";
         nativeBuildInputs = with pkgs; [
-          curl
           elixir
-          jq
-          nodejs_22
         ];
       };
     };

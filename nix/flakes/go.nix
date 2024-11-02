@@ -14,14 +14,12 @@
     in {
       default = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
-          curl
           delve
           go
           go-outline
           go-tools
           gopkgs
           gopls
-          nodejs_22
         ];
       };
     };

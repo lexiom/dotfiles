@@ -16,10 +16,7 @@
         LD_LIBRARY_PATH = "${pkgs.stdenv.cc.cc.lib}/lib";
         nativeBuildInputs = with pkgs; [
           (python3.withPackages (ps: [ps.pynvim]))
-          curl
-          jq
           pdm
-          nodejs_22
         ];
       };
     };

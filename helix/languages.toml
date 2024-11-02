@@ -1,5 +1,15 @@
 [[language]]
+name = "c"
+formatter = { command = "clang-format" }
+auto-format = true
+
+[[language]]
 name = "python"
 # formatter = { command = "ruff", args = ["format", "--line-length", "88", "-"] }
 # language-servers = ["jedi", "pylsp"]
+auto-format = true
+
+[[language]]
+name = "rust"
+formatter = { command = "rustfmt" }
 auto-format = true

@@ -1,4 +1,9 @@
-local wezterm = require("wezterm")
+local wezterm = require 'wezterm'
+local mux = wezterm.mux
+
+wezterm.on('gui-startup', function(cmd)
+	local tab, pane, window = wezterm.mux.spawn_window { position = { x = 0, y = 0, origin = { Named = "DP-3" } } }
+end)
 
 -- customize settings
 local config = {}
@@ -8,8 +13,8 @@ if wezterm.config_builder then
     config = wezterm.config_builder()
 end
 
-config.initial_rows = 100
-config.initial_cols = 100
+-- config.initial_rows = 100
+-- config.initial_cols = 100
 
 -- make window slightly transparent
 config.window_background_opacity = 0.90
@@ -40,7 +45,7 @@ config.font_size = 15
 config.enable_wayland = true
 
 -- disabling window decorations
-config.window_decorations = "RESIZE"
+-- config.window_decorations = "NONE"
 
 -- disabling the new tab (+) button
 config.show_new_tab_button_in_tab_bar = false

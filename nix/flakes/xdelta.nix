@@ -1,7 +1,7 @@
 # xdelta -d -s original_file xdelta_file output_file
 # cmp --silent $old $new || echo "files are different"
 {
-  description = "Xdelta Environment";
+  description = "Xdelta Development Environment";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };

@@ -36,6 +36,8 @@
     # '')
     fish
     helix
+    hexedit
+    tree
     starship
   ];
 

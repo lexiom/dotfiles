@@ -1,5 +1,5 @@
 {
-  description = "Rust Environment";
+  description = "Rust Development Environment";
   inputs = {
     nixpkgs.url = "nixpkgs/nixos-unstable";
   };
@@ -15,9 +15,9 @@
       default = pkgs.mkShell {
         nativeBuildInputs = with pkgs; [
           cargo
-          curl
-          jq
+          rust-analyzer
           rustc
+          rustfmt
         ];
       };
     };
