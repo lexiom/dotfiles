@@ -41,7 +41,8 @@ symbol = " "
 
 [character]
 success_symbol = "[➜](bold cyan)"
-error_symbol = "[➜](bold 166) "
+error_symbol = "[➜](bold 166)"
+vimcmd_symbol = "[➜](bold cyan)"
 
 [conda]
 symbol = " "
@@ -168,6 +169,7 @@ symbol = " "
 
 [python]
 symbol = " "
+format = 'via [${symbol}${pyenv_prefix}(${version} )]($style)'
 
 [rlang]
 symbol = "󰟔 "

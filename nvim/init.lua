@@ -8,6 +8,11 @@ vim.g.maplocalleader = ' '
 -- Set to true if a Nerd Font is installed and set in the terminal
 vim.g.have_nerd_font = true
 
+-- Set tabstop, shiftwidth, and expandtab
+vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.opt.expandtab = true
+
 -- Make line numbers default
 vim.opt.number = true
 
@@ -28,6 +33,9 @@ end)
 
 -- Every wrapped line continues visually indented (same amount of space as the beginning of that line)
 vim.opt.breakindent = true
+
+-- Disable line wrapping
+vim.opt.wrap = false
 
 -- Enable persistent undo history
 vim.opt.undofile = true
@@ -73,6 +81,15 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- Terraform and HCL comment string
+vim.api.nvim_create_autocmd("FileType", {
+  group = vim.api.nvim_create_augroup("TerraformCommentString", { clear = true }),
+  callback = function(ev)
+    vim.bo[ev.buf].commentstring = "# %s"
+  end,
+  pattern = { "terraform", "hcl" },
+})
+
 -- Install `lazy.nvim` plugin manager
 local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
 if not (vim.uv or vim.loop).fs_stat(lazypath) then
@@ -85,10 +102,6 @@ end ---@diagnostic disable-next-line: undefined-field
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  {
-    -- Detect tabstop and shiftwidth automatically
-    'tpope/vim-sleuth',
-  },
   {
     -- Helps you remember your keybindings
     'folke/which-key.nvim',
@@ -113,17 +126,6 @@ require('lazy').setup({
         { '<leader>w', group = '[W]orkspace' },
         { '<leader>t', group = '[T]oggle' },
         { '<leader>h', group = 'Git [H]unk', mode = { 'n', 'v' } },
-      },
-    },
-  },
-  {
-    -- Optimizes LuaLS for handling Neovim config files
-    'folke/lazydev.nvim',
-    ft = 'lua',
-    opts = {
-      library = {
-        -- Load luvit types when the `vim.uv` word is found
-        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
       },
     },
   },
@@ -197,61 +199,79 @@ require('lazy').setup({
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
           end
+          -- -- basedpyright specific settings
+          -- -- Disable completions
+          -- if client and client.name == 'basedpyright' then
+          --   ---@diagnostic disable-next-line: assign-type-mismatch
+          --   client.server_capabilities.completionProvider = false
+          -- end
           -- Ruff specific settings
           if client and client.name == 'ruff' then
-            -- Disable Ruff hover in favor of Pyright
+            -- Disable Ruff hover in favor of basedpyright
             client.server_capabilities.hoverProvider = false
-            -- Format code on save
+            -- Perform some actions on save
             vim.api.nvim_create_autocmd('BufWritePre', {
               buffer = event.buf,
               callback = function()
+                -- Format code on save
+                vim.lsp.buf.format { async = false, id = event.data.client_id }
+                -- Apply Ruff's "Fix All" code action
+                vim.lsp.buf.code_action {
+                  context = { only = { "source.fixAll" } },
+                  apply = true,
+                }
+              end,
+            })
+          end
+          -- ols specific settings
+          if client and client.name == 'ols' then
+            -- Perform some actions on save
+            vim.api.nvim_create_autocmd('BufWritePre', {
+              buffer = event.buf,
+              callback = function()
+                -- Format code on save
+                vim.lsp.buf.format { async = false, id = event.data.client_id }
+              end,
+            })
+          end
+          -- Terraform Language Server specific settings
+          if client and client.name == 'terraformls' then
+            -- Perform some actions on save
+            vim.api.nvim_create_autocmd('BufWritePre', {
+              buffer = event.buf,
+              callback = function()
+                -- Format code on save
                 vim.lsp.buf.format { async = false, id = event.data.client_id }
               end,
             })
           end
         end,
       })
-      -- LSP servers and clients are able to communicate to each other what features they support.
-      -- By default, Neovim doesn't support everything that is in the LSP specification.
-      -- When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities.
-      -- So, we create new capabilities with nvim cmp, and then broadcast that to the servers.
+      -- LSP servers and clients are able to communicate to each other what features they support
+      -- By default, Neovim doesn't support everything that is in the LSP specification
+      -- When you add nvim-cmp, luasnip, etc. Neovim now has *more* capabilities
+      -- So, we create new capabilities with nvim cmp, and then broadcast that to the servers
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend('force', capabilities, require('cmp_nvim_lsp').default_capabilities())
       -- Enable the following language servers
-      -- Feel free to add/remove any LSPs that you want here. They will automatically be installed.
+      -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
       -- Add any additional override configuration in the following tables. Available keys are:
       -- - cmd (table): Override the default command used to start the server
       -- - filetypes (table): Override the default list of associated filetypes for the server
-      -- - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features.
-      -- - settings (table): Override the default settings passed when initializing the server.
+      -- - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features
+      -- - settings (table): Override the default settings passed when initializing the server
       -- For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- Python
-        -- basedpyright = {
-        --   settings = {
-        --     basedpyright = {
-        --       -- Using Ruff's import organizer
-        --       disableOrganizeImports = true,
-        --       typeCheckingMode = "off",
-        --     },
-        --     python = {
-        --       analysis = {
-        --         -- Ignore all files for analysis to exclusively use Ruff for linting
-        --         ignore = { '*' },
-        --       },
-        --     },
-        --   },
-        -- },
-        jedi_language_server = {
-          settings = {},
-        },
-        ruff = {
+        -- Docker
+        dockerls = {
           settings = {
-            lint = {
-              args = {
-                "--line-length=100"
-              }
-            }
+            docker = {
+              languageserver = {
+                formatter = {
+                  ignoreMultilineInstructions = true,
+                },
+              },
+            },
           },
         },
         -- Lua
@@ -269,6 +289,38 @@ require('lazy').setup({
             },
           },
         },
+        -- Odin
+        ols = {
+          init_options = {
+            checker_args = "-strict-style",
+            collections = {
+              { name = "shared", path = vim.fn.expand('$HOME/odin-lib') }
+            },
+          },
+        },
+        -- Python
+        basedpyright = {
+          settings = {
+            basedpyright = {
+              analysis = {
+                typeCheckingMode = "off"
+              }
+            }
+          }
+        },
+        -- jedi_language_server = {
+        --   initializationOptions = {
+        --     diagnostics = {
+        --       enable = false
+        --     },
+        --     jediSettings = {
+        --       autoImportModules = { "pandas" },
+        --     }
+        --   }
+        -- },
+        ruff = {},
+        -- Terraform
+        terraformls = {},
       }
       -- Ensure the servers and tools above are installed
       -- To check the current status of installed tools and/or manually install
@@ -291,6 +343,17 @@ require('lazy').setup({
         },
       }
     end,
+  },
+  {
+    -- Optimizes LuaLS for handling Neovim config files
+    'folke/lazydev.nvim',
+    ft = 'lua',
+    opts = {
+      library = {
+        -- Load luvit types when the `vim.uv` word is found
+        { path = '${3rd}/luv/library', words = { 'vim%.uv' } },
+      },
+    },
   },
   { -- Autocompletion
     'hrsh7th/nvim-cmp',
@@ -357,7 +420,9 @@ require('lazy').setup({
           -- If you prefer more traditional completion keymaps,
           -- you can uncomment the following lines
           ['<CR>'] = cmp.mapping.confirm { select = false },
-          ['<Tab>'] = cmp.mapping.select_next_item(),
+          ['<Tab>'] = nil,
+          ['<S-Tab>'] = nil,
+          -- ['<Tab>'] = cmp.mapping.select_next_item(),
           -- ['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
           -- Manually trigger a completion from nvim-cmp
@@ -397,6 +462,54 @@ require('lazy').setup({
       }
     end,
   },
+  {
+      "kawre/neotab.nvim",
+      event = "InsertEnter",
+      opts = {
+          -- configuration goes here
+      },
+  },
+  -- {
+  --   'abecodes/tabout.nvim',
+  --   lazy = false,
+  --   config = function()
+  --     require('tabout').setup {
+  --       tabkey = '<Tab>', -- key to trigger tabout, set to an empty string to disable
+  --       backwards_tabkey = '<S-Tab>', -- key to trigger backwards tabout, set to an empty string to disable
+  --       act_as_tab = true, -- shift content if tab out is not possible
+  --       act_as_shift_tab = false, -- reverse shift content if tab out is not possible (if your keyboard/terminal supports <S-Tab>)
+  --       default_tab = '<C-t>', -- shift default action (only at the beginning of a line, otherwise <TAB> is used)
+  --       default_shift_tab = '<C-d>', -- reverse shift default action,
+  --       enable_backwards = true, -- well ...
+  --       completion = false, -- if the tabkey is used in a completion pum
+  --       tabouts = {
+  --         { open = "'", close = "'" },
+  --         { open = '"', close = '"' },
+  --         { open = '`', close = '`' },
+  --         { open = '(', close = ')' },
+  --         { open = '[', close = ']' },
+  --         { open = '{', close = '}' }
+  --       },
+  --       ignore_beginning = false, --[[ if the cursor is at the beginning of a filled element it will rather tab out than shift the content ]]
+  --       exclude = {} -- tabout will ignore these filetypes
+  --     }
+  --   end,
+  --   dependencies = { -- These are optional
+  --     "nvim-treesitter/nvim-treesitter",
+  --     "L3MON4D3/LuaSnip",
+  --     "hrsh7th/nvim-cmp"
+  --   },
+  --   opt = false,  -- Set this to true if the plugin is optional
+  --   event = 'InsertCharPre', -- Set the event to 'InsertCharPre' for better compatibility
+  --   priority = 1000,
+  -- },
+  -- {
+  --   "L3MON4D3/LuaSnip",
+  --   keys = function()
+  --     -- Disable default tab keybinding in LuaSnip
+  --     return {}
+  --   end,
+  -- },
   { -- Colorscheme
     'catppuccin/nvim',
     name = 'catppuccin',
@@ -446,7 +559,11 @@ require('lazy').setup({
     main = 'nvim-treesitter.configs', -- Sets main module to use for opts
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'dockerfile', 'html', 'lua', 'luadoc', 'markdown', 'markdown_inline', 'python', 'query', 'vim', 'vimdoc' },
+      ensure_installed = {
+                'bash', 'c', 'diff', 'hcl', 'html', 'json', 'lua', 'luadoc',
+                'markdown', 'markdown_inline','odin', 'python', 'query', 'sql',
+                'terraform', 'toml', 'vim', 'vimdoc', 'yaml'
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
@@ -462,4 +579,4 @@ require('lazy').setup({
   },
 })
 
-vim.g.python3_host_prog = '/Users/alexandre/.local/share/neovim/venv/bin/python3'
+vim.g.python3_host_prog = '/Users/alexandre/.local/share/pynvim/venv/bin/python3'
