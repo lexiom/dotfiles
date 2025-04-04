@@ -1,0 +1,26 @@
+# font
+font-family = "IosevkaTermSlab Nerd Font Mono"
+font-size = 17
+font-thicken = true
+font-feature = -calt
+font-feature = -liga
+font-feature = -dlig
+window-inherit-font-size = true
+
+# cursor
+adjust-cursor-height = -5
+adjust-cursor-thickness = 3
+# cursor-text = 010003
+cursor-invert-fg-bg = true
+
+# layout
+macos-titlebar-style = tabs
+background-opacity = 0.95
+theme = catppuccin-mocha
+window-height = 39
+window-width = 177
+
+# keybindings
+keybind = ctrl+k>j=new_tab
+keybind = ctrl+k>l=next_tab
+keybind = ctrl+k>h=previous_tab
