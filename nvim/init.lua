@@ -81,6 +81,26 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   end,
 })
 
+-- JSON spacing
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "json",
+    callback = function()
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.tabstop = 2
+        vim.opt_local.expandtab = true
+    end
+})
+
+-- YAML spacing
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "yaml",
+    callback = function()
+        vim.opt_local.shiftwidth = 2
+        vim.opt_local.tabstop = 2
+        vim.opt_local.expandtab = true
+    end
+})
+
 -- Terraform and HCL comment string
 vim.api.nvim_create_autocmd("FileType", {
   group = vim.api.nvim_create_augroup("TerraformCommentString", { clear = true }),
@@ -165,17 +185,29 @@ require('lazy').setup({
           -- WARN: This is not Goto Definition, this is Goto Declaration
           -- For example, in C this would take you to the header
           map('gD', vim.lsp.buf.declaration, '[G]oto [D]eclaration')
+
+          -- This function resolves a difference between neovim nightly (version 0.11) and stable (version 0.10)
+          ---@param client vim.lsp.Client
+          ---@param method vim.lsp.protocol.Method
+          ---@param bufnr? integer some lsp support methods only in specific files
+          ---@return boolean
+          local function client_supports_method(client, method, bufnr)
+            return client:supports_method(method, bufnr)
+          end
+
           -- The following two autocommands are used to highlight references of the
           -- word under your cursor when your cursor rests there for a little while
           -- See `:help CursorHold` for information about when this is executed
           local client = vim.lsp.get_client_by_id(event.data.client_id)
-          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+          if client and client.supports_method(client, vim.lsp.protocol.Methods.textDocument_documentHighlight, event.buf) then
             local highlight_augroup = vim.api.nvim_create_augroup('kickstart-lsp-highlight', { clear = false })
+
             vim.api.nvim_create_autocmd({ 'CursorHold', 'CursorHoldI' }, {
               buffer = event.buf,
               group = highlight_augroup,
               callback = vim.lsp.buf.document_highlight,
             })
+
             -- When you move your cursor, the highlights will be cleared
             vim.api.nvim_create_autocmd({ 'CursorMoved', 'CursorMovedI' }, {
               buffer = event.buf,
@@ -194,7 +226,7 @@ require('lazy').setup({
           -- The following code creates a keymap to toggle inlay hints in
           -- your code, if the language server you are using supports them
           -- This may be unwanted, since they displace some of your code
-          if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_inlayHint) then
+          if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
             map('<leader>th', function()
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
@@ -308,19 +340,11 @@ require('lazy').setup({
             }
           }
         },
-        -- jedi_language_server = {
-        --   initializationOptions = {
-        --     diagnostics = {
-        --       enable = false
-        --     },
-        --     jediSettings = {
-        --       autoImportModules = { "pandas" },
-        --     }
-        --   }
-        -- },
         ruff = {},
         -- Terraform
         terraformls = {},
+        -- YAML
+        yamlls = {},
       }
       -- Ensure the servers and tools above are installed
       -- To check the current status of installed tools and/or manually install
@@ -560,7 +584,7 @@ require('lazy').setup({
     -- [[ Configure Treesitter ]] See `:help nvim-treesitter`
     opts = {
       ensure_installed = {
-                'bash', 'c', 'diff', 'hcl', 'html', 'json', 'lua', 'luadoc',
+                'bash', 'c', 'diff', 'hcl', 'html', 'lua', 'luadoc', 'json',
                 'markdown', 'markdown_inline','odin', 'python', 'query', 'sql',
                 'terraform', 'toml', 'vim', 'vimdoc', 'yaml'
       },
