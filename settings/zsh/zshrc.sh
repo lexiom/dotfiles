@@ -1,0 +1,42 @@
+# Only run in interactive shells
+[[ -o interactive ]] || return
+
+# Auto-start tmux on interactive SSH sessions
+if [[ -n "$SSH_CONNECTION" && -z "$TMUX" && $- == *i* ]]; then
+  exec tmux new-session -A -s main
+fi
+
+# Load completion system
+autoload -Uz compinit
+compinit
+
+# Sourcing plugins
+source "$ZDOTDIR/plugins.zsh"
+eval "$(direnv hook zsh)"
+
+# Don't record duplicates in history
+setopt HIST_IGNORE_DUPS
+setopt HIST_IGNORE_SPACE
+setopt HIST_REDUCE_BLANKS
+setopt INC_APPEND_HISTORY
+HISTFILE=$HOME/.zsh_history
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Environment variables
+export CLICOLOR=1
+export GIT_CONFIG_GLOBAL="$HOME/.config/git/.gitconfig"
+export XDG_CONFIG_HOME="${HOME}/.config"
+
+# Aliases
+alias cleanup='rm ~/.zsh_history && history -p && touch ~/.zsh_history && exit'
+
+# Auto-start tmux on interactive SSH sessions
+if [[ -n "$SSH_CONNECTION" && -z "$TMUX" && $- == *i* ]]; then
+  exec tmux new-session -A -s main
+fi
+
+# Starship
+if [[ -z ${STARSHIP_SHELL-} ]]; then
+  eval "$(starship init zsh)"
+fi

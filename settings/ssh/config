@@ -1,0 +1,11 @@
+Host github-personal
+  HostName github.com
+  User git
+  IdentitiesOnly yes
+  IdentityAgent $SSH_AUTH_SOCK
+
+Host github-personal
+  HostName github.com
+  User git
+  IdentitiesOnly yes
+  IdentityAgent $SSH_AUTH_SOCK

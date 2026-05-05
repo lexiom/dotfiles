@@ -1,0 +1,67 @@
+{
+  "nodes": {
+    "home-manager": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1775425411,
+        "narHash": "sha256-KY6HsebJHEe5nHOWP7ur09mb0drGxYSzE3rQxy62rJo=",
+        "owner": "nix-community",
+        "repo": "home-manager",
+        "rev": "0d02ec1d0a05f88ef9e74b516842900c41f0f2fe",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "release-25.11",
+        "repo": "home-manager",
+        "type": "github"
+      }
+    },
+    "nixpkgs": {
+      "locked": {
+        "lastModified": 1777428379,
+        "narHash": "sha256-ypxFOeDz+CqADEQNL72haqGjvZQdBR5Vc7pyx2JDttI=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "755f5aa91337890c432639c60b6064bb7fe67769",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-25.11",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "root": {
+      "inputs": {
+        "home-manager": "home-manager",
+        "nixpkgs": "nixpkgs",
+        "tree-sitter-odin": "tree-sitter-odin"
+      }
+    },
+    "tree-sitter-odin": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1734912029,
+        "narHash": "sha256-vlw5XaHTdsgO9H4y8z0u0faYzs+L3UZPhqhD/IJ6khY=",
+        "owner": "tree-sitter-grammars",
+        "repo": "tree-sitter-odin",
+        "rev": "e8adc739b78409a99f8c31313f0bb54cc538cf73",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tree-sitter-grammars",
+        "ref": "v1.3.0",
+        "repo": "tree-sitter-odin",
+        "type": "github"
+      }
+    }
+  },
+  "root": "root",
+  "version": 7
+}

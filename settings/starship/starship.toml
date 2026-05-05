@@ -1,0 +1,109 @@
+format = """
+[](#0e1116)\
+$hostname\
+[](bg:#0349b4 fg:#0e1116)\
+$directory\
+[](bg:#dc6d1a fg:#0349b4)\
+$git_branch\
+$git_status\
+[ ](fg:#dc6d1a)\
+$c\
+$cpp\
+$direnv\
+$docker_context\
+$elixir\
+$golang\
+$java\
+$lua\
+$nodejs\
+$odin\
+$python\
+$rust\
+$terraform\
+$zig\
+$time\
+$line_break\
+$character
+"""
+
+# Disable the blank line at the start of the prompt
+add_newline = true
+
+##########
+# CUSTOM #
+##########
+
+[character]
+success_symbol = "[➜](bold #00b359)"
+error_symbol = "[➜](bold #cc0000)"
+vimcmd_symbol = "[➜](bold #00b359)"
+
+[directory]
+style = "bg:#0349b4 fg:#ffffff"
+format = "[ $path ]($style)"
+truncation_length = 4
+truncation_symbol = "…/"
+read_only = " 󰌾"
+
+[git_branch]
+symbol = " "
+style = "bg:#dc6d1a"
+format = '[[ $symbol $branch ](bg:#dc6d1a fg:#ffffff)]($style)'
+
+[git_status]
+style = "fg:#dc6d1a"
+format = '[[( $all_status$ahead_behind )](bg:#dc6d1a fg:#ffffff)]($style)'
+
+[hostname]
+ssh_only = false
+ssh_symbol = ''
+format = '[ $hostname ]($style)'
+style = "bg:#0e1116 fg:#ffffff"
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "fg:#a0111f"
+
+###########
+# DEFAULT #
+###########
+
+[c]
+symbol = " "
+
+[cpp]
+symbol = "++ "
+
+[direnv]
+symbol = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[lua]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[odin]
+symbol = "󰟢 "
+
+[python]
+symbol = " "
+
+[rust]
+symbol = "󱘗 "
+
+[terraform]
+symbol = " "
+
+[zig]
+symbol = " "
