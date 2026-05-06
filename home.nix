@@ -42,6 +42,9 @@ in {
 
   home.file = {
     ".hushlogin" = { text = ""; };
+    ".ssh/config".source = ./settings/ssh/config;
+    ".ssh/id_personal.pub".source = ./settings/ssh/id_personal.pub;
+    ".ssh/id_work.pub".source = ./settings/ssh/id_work.pub;
     ".tmux.conf".source = ./settings/tmux/tmux.conf;
     ".zshenv".source = ./settings/zsh/zshenv.sh;
   };
