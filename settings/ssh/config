@@ -1,0 +1,36 @@
+# Global
+Host *
+  AddKeysToAgent yes
+  ServerAliveInterval 60
+  ServerAliveCountMax 3
+  TCPKeepAlive yes
+  UseKeychain yes
+
+# Personal GitHub
+Host github-personal
+  HostName github.com
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_personal
+  User git
+
+# Work GitHub
+Host github-work
+  HostName github.com
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_work
+  User git
+
+# Development Environments
+Host nix-personal
+  ForwardAgent yes
+  HostName 10.0.0.21
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_personal
+  User sysadmin
+
+Host nix-work
+  ForwardAgent yes
+  HostName 10.0.0.22
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_work
+  User sysadmin
