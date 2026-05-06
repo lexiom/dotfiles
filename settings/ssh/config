@@ -20,7 +20,14 @@ Host github-work
   IdentityFile ~/.ssh/id_work
   User git
 
-# Development Environments
+# Base VM
+Host nix-base
+  HostName 10.0.0.20
+  User sysadmin
+  PreferredAuthentications password
+  PubkeyAuthentication no
+
+# Personal VM
 Host nix-personal
   ForwardAgent yes
   HostName 10.0.0.21
@@ -28,6 +35,7 @@ Host nix-personal
   IdentityFile ~/.ssh/id_personal
   User sysadmin
 
+# Work VM
 Host nix-work
   ForwardAgent yes
   HostName 10.0.0.22
