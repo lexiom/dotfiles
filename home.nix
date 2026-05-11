@@ -16,7 +16,6 @@ in {
     fd
     fzf
     gcc
-    gnumake
     jq
     lua5_1
     luarocks

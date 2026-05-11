@@ -19,6 +19,7 @@ case "${OPTION}" in
     
     git config --file ./gitconfig "user.name" "${NAME}"
     git config --file ./gitconfig "user.email" "${EMAIL}"
+    git config --file ./gitconfig "init.defaultBranch" "master"
     git config --file ./gitconfig "url.git@github-${CONFIG}:.insteadOf" "git@github.com:"
     git config --file ./gitconfig "core.editor" "nvim"
 
@@ -44,6 +45,7 @@ case "${OPTION}" in
 
         git config --file "./gitconfig-${CONFIG}" "user.name" "${NAME}"
         git config --file "./gitconfig-${CONFIG}" "user.email" "${EMAIL}"
+        git config --file "./gitconfig-${CONFIG}" "init.defaultBranch" "master"
         git config --file "./gitconfig-${CONFIG}" "url.git@github-${CONFIG}:.insteadOf" "git@github.com:"
 
         mkdir "${GIT_DIR}/${CONFIG}" && \
