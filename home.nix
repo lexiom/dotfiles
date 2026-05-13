@@ -27,6 +27,7 @@ in
     nix-direnv
     starship
     tree
+    wakeonlan
     zsh-autosuggestions
     zsh-vi-mode
 

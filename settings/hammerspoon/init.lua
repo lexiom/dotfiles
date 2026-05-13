@@ -12,11 +12,11 @@ hs.hotkey.bind({"cmd"}, "3", function()
 end)
 
 hs.hotkey.bind({"cmd"}, "4", function()
-  hs.application.launchOrFocus("Safari")
+  hs.application.launchOrFocus("Chromium")
 end)
 
 hs.hotkey.bind({"cmd"}, "5", function()
-  hs.application.launchOrFocus("Spotify")
+  hs.application.launchOrFocus("Music")
 end)
 
 hs.hotkey.bind({"cmd", "ctrl"}, "S", function()
