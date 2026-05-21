@@ -28,7 +28,7 @@ macos-titlebar-style = tabs
 maximize = true
 theme = "GitHub Light High Contrast"
 window-padding-x = 420
-# window-padding-x = 140
+# window-padding-x = 60
 
 # shell
 clipboard-read = allow
