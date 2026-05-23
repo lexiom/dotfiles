@@ -68,17 +68,24 @@
     "brewPrefix": "homebrew.brewPrefix",
     "brewfile": "homebrew.brewfile",
     "brews": "homebrew.brews",
+    "cargoPackages": "homebrew.cargoPackages",
     "caskArgs": "homebrew.caskArgs",
     "casks": "homebrew.casks",
     "cleanup": "homebrew.cleanup",
     "enable": "homebrew.enable",
+    "enableBashIntegration": "homebrew.enableBashIntegration",
+    "enableFishIntegration": "homebrew.enableFishIntegration",
+    "enableZshIntegration": "homebrew.enableZshIntegration",
     "extraConfig": "homebrew.extraConfig",
     "global": "homebrew.global",
+    "goPackages": "homebrew.goPackages",
     "greedyCasks": "homebrew.greedyCasks",
     "masApps": "homebrew.masApps",
     "onActivation": "homebrew.onActivation",
+    "prefix": "homebrew.prefix",
     "taps": "homebrew.taps",
     "user": "homebrew.user",
+    "vscode": "homebrew.vscode",
     "whalebrews": "homebrew.whalebrews"
   },
   "ids": {
@@ -108,6 +115,7 @@
       "enableStealthMode": "networking.applicationFirewall.enableStealthMode"
     },
     "computerName": "networking.computerName",
+    "dhcpClientId": "networking.dhcpClientId",
     "dns": "networking.dns",
     "domain": "networking.domain",
     "fqdn": "networking.fqdn",
@@ -243,6 +251,9 @@
     "direnv": {
       "direnvrcExtra": "programs.direnv.direnvrcExtra",
       "enable": "programs.direnv.enable",
+      "enableBashIntegration": "programs.direnv.enableBashIntegration",
+      "enableFishIntegration": "programs.direnv.enableFishIntegration",
+      "enableZshIntegration": "programs.direnv.enableZshIntegration",
       "finalPackage": "programs.direnv.finalPackage",
       "loadInNixShell": "programs.direnv.loadInNixShell",
       "nix-direnv": {
@@ -280,7 +291,8 @@
       "agent": {
         "enable": "programs.gnupg.agent.enable",
         "enableSSHSupport": "programs.gnupg.agent.enableSSHSupport"
-      }
+      },
+      "package": "programs.gnupg.package"
     },
     "info": {
       "enable": "programs.info.enable"
@@ -305,6 +317,7 @@
       "enableVim": "programs.tmux.enableVim",
       "extraConfig": "programs.tmux.extraConfig",
       "iTerm2": "programs.tmux.iTerm2",
+      "reverseSplitBindings": "programs.tmux.reverseSplitBindings",
       "tmuxConfig": "programs.tmux.tmuxConfig",
       "tmuxOptions": "programs.tmux.tmuxOptions"
     },
@@ -547,7 +560,8 @@
     "openssh": {
       "authorizedKeysFiles": "services.openssh.authorizedKeysFiles",
       "enable": "services.openssh.enable",
-      "extraConfig": "services.openssh.extraConfig"
+      "extraConfig": "services.openssh.extraConfig",
+      "hostKeys": "services.openssh.hostKeys"
     },
     "postgresql": {
       "authentication": "services.postgresql.authentication",
@@ -902,6 +916,7 @@
         "disable-shadow": "system.defaults.screencapture.disable-shadow",
         "include-date": "system.defaults.screencapture.include-date",
         "location": "system.defaults.screencapture.location",
+        "save-selections": "system.defaults.screencapture.save-selections",
         "show-thumbnail": "system.defaults.screencapture.show-thumbnail",
         "target": "system.defaults.screencapture.target",
         "type": "system.defaults.screencapture.type"

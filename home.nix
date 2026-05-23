@@ -19,7 +19,6 @@ in
     jq
     lua5_1
     luarocks
-    nodejs
     ripgrep
 
     # Utilities
@@ -34,10 +33,6 @@ in
     # Apps
     keepassxc
     monitorcontrol
-
-    # LSPs
-    vscode-langservers-extracted # JSON
-    yaml-language-server
   ];
 
   home.file = {
