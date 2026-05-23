@@ -27,8 +27,8 @@ keybind = cmd+k>l=next_tab
 macos-titlebar-style = tabs
 maximize = true
 theme = "GitHub Light High Contrast"
-window-padding-x = 420
-# window-padding-x = 60
+# window-padding-x = 420
+window-padding-x = 15
 
 # shell
 clipboard-read = allow
