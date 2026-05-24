@@ -1,6 +1,6 @@
 -- Applications
 hs.hotkey.bind({"cmd"}, "1", function()
-  hs.application.launchOrFocus("Finder")
+  hs.application.launchOrFocus("Chromium")
 end)
 
 hs.hotkey.bind({"cmd"}, "2", function()
@@ -8,11 +8,11 @@ hs.hotkey.bind({"cmd"}, "2", function()
 end)
 
 hs.hotkey.bind({"cmd"}, "3", function()
-  hs.application.launchOrFocus("Keepassxc")
+  hs.application.launchOrFocus("Finder")
 end)
 
 hs.hotkey.bind({"cmd"}, "4", function()
-  hs.application.launchOrFocus("Chromium")
+  hs.application.launchOrFocus("KeePassXC")
 end)
 
 hs.hotkey.bind({"cmd"}, "5", function()
