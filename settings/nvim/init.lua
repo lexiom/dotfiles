@@ -136,6 +136,10 @@ require("lazy").setup({
   require("extra.lsp"),
   require("extra.nav"),
   require("extra.ui"),
+}, {
+  rocks = {
+    enabled = false,
+  },
 })
 
 -------------

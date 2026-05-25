@@ -17,8 +17,6 @@ in
     fzf
     git
     jq
-    lua5_1
-    luarocks
     ripgrep
 
     # Utilities

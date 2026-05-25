@@ -8,7 +8,14 @@ hs.hotkey.bind({"cmd"}, "2", function()
 end)
 
 hs.hotkey.bind({"cmd"}, "3", function()
-  hs.application.launchOrFocus("Finder")
+  local finder = hs.application.get("Finder")
+  local win = finder:mainWindow()
+
+  if win and win:isStandard() then
+    win:focus()
+  else
+    hs.application.launchOrFocus("Finder")
+  end
 end)
 
 hs.hotkey.bind({"cmd"}, "4", function()

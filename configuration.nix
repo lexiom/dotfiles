@@ -14,6 +14,7 @@
     casks = [
       "ghostty"
       "hammerspoon"
+      "rectangle"
       "ungoogled-chromium"
     ];
   };
