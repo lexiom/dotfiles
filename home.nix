@@ -8,7 +8,6 @@
     # Dependencies
     fd
     fzf
-    git
     jq
     ripgrep
 
