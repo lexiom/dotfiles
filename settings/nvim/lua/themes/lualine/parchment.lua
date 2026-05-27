@@ -1,17 +1,16 @@
 local colors = {
-  bg        = '#ffffff',
-  fg        = '#0e1116',
-  muted     = '#59636e',
-  subtle    = '#f6f8fa',
+  bg        = '#f4f1e8',
+  fg        = '#000000',
+  muted     = '#dbd3bd',
+  subtle    = '#dbd3bd',
   border    = '#8c959f',
 
-  blue      = '#0349b4',
-  green     = '#055d20',
-  red       = '#a0111f',
-  purple    = '#622cbc',
-
-  black     = '#0e1116',
-  white     = '#ffffff',
+  blue      = '#000000',
+  green     = '#000000',
+  red       = '#000000',
+  purple    = '#000000',
+  black     = '#000000',
+  white     = '#f4f1e8',
 }
 
 return {

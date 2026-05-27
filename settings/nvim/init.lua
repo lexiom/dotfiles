@@ -12,6 +12,10 @@ vim.g.maplocalleader = " "
 -- Set the local path to Python's pynvim package
 vim.g.python3_host_prog = '~/.local/share/pynvim/venv/bin/python3'
 
+-- Enable syntax highlighting
+vim.cmd("syntax enable")
+vim.cmd("filetype plugin indent on")
+
 -------------
 -- OPTIONS --
 -------------
@@ -133,9 +137,9 @@ rtp:prepend(lazypath)
 -------------
 
 require("lazy").setup({
-  require("extra.lsp"),
-  require("extra.nav"),
-  require("extra.ui"),
+  require("plugins.lsp"),
+  require("plugins.nav"),
+  require("plugins.ui"),
 }, {
   rocks = {
     enabled = false,

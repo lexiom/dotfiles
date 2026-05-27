@@ -10,10 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
       url = "github:nix-community/home-manager";
     };
-    tree-sitter-odin = {
-      url = "github:tree-sitter-grammars/tree-sitter-odin/v1.3.0";
-      flake = false;
-    };
   };
 
   outputs = inputs@{ self, nix-darwin, home-manager, ... }:
