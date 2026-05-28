@@ -133,9 +133,9 @@ rtp:prepend(lazypath)
 -------------
 
 require("lazy").setup({
-  require("extra.lsp"),
-  require("extra.nav"),
-  require("extra.ui"),
+  require("plugins.lsp"),
+  require("plugins.nav"),
+  require("plugins.ui"),
 })
 
 -------------

@@ -21,18 +21,22 @@
   home-manager.users.sysadmin = {
     home.packages = with pkgs; [
       # Tools
+      cargo
       duckdb
+      gcc
       gh
       go
       google-cloud-sdk
       k9s
       kubectl
+      nodejs
+      python3
       tenv
       uv
 
       # LSPs
+      bash-language-server
       dockerfile-language-server
-      gopls
       ruff
       terraform-ls
       ty

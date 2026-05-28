@@ -1,26 +1,27 @@
 format = """
-[](#0e1116)\
-$hostname\
-[](bg:#0349b4 fg:#0e1116)\
+[](#000000)\
+$username\
+[](bg:#4f3721 fg:#000000)\
 $directory\
-[](bg:#dc6d1a fg:#0349b4)\
+[](bg:#76562f fg:#4f3721)\
 $git_branch\
 $git_status\
-[ ](fg:#dc6d1a)\
-$c\
-$cpp\
-$direnv\
+[ ](fg:#76562f)\
+$aws\
+$dart\
 $docker_context\
 $elixir\
+$elm\
 $golang\
+$haskell\
 $java\
+$julia\
 $lua\
 $nodejs\
-$odin\
+$nim\
 $python\
 $rust\
-$terraform\
-$zig\
+$scala\
 $time\
 $line_break\
 $character
@@ -29,81 +30,169 @@ $character
 # Disable the blank line at the start of the prompt
 add_newline = true
 
-##########
-# CUSTOM #
-##########
+[aws]
+symbol = " "
+
+[buf]
+symbol = " "
+
+[c]
+symbol = " "
 
 [character]
-success_symbol = "[➜](bold #00b359)"
-error_symbol = "[➜](bold #cc0000)"
-vimcmd_symbol = "[➜](bold #00b359)"
+success_symbol = "[➜](bold #000000)"
+error_symbol = "[](bold #000000)"
+vimcmd_symbol = "[](bold #000000)"
+
+[conda]
+symbol = " "
+
+[dart]
+symbol = " "
 
 [directory]
-style = "bg:#0349b4 fg:#ffffff"
+style = "bg:#4f3721 fg:#f4f1e8"
 format = "[ $path ]($style)"
 truncation_length = 4
 truncation_symbol = "…/"
 read_only = " 󰌾"
 
-[git_branch]
-symbol = " "
-style = "bg:#dc6d1a"
-format = '[[ $symbol $branch ](bg:#dc6d1a fg:#ffffff)]($style)'
-
-[git_status]
-style = "fg:#dc6d1a"
-format = '[[( $all_status$ahead_behind )](bg:#dc6d1a fg:#ffffff)]($style)'
-
-[hostname]
-ssh_only = false
-ssh_symbol = ''
-format = '[ $hostname ]($style)'
-style = "bg:#0e1116 fg:#ffffff"
-
-[time]
-disabled = false
-time_format = "%R" # Hour:Minute Format
-style = "fg:#a0111f"
-
-###########
-# DEFAULT #
-###########
-
-[c]
-symbol = " "
-
-[cpp]
-symbol = "++ "
-
-[direnv]
-symbol = " "
-
 [docker_context]
+style = "fg:#4f3721"
 symbol = " "
 
 [elixir]
-symbol = " "
+symbol = " "
+
+[elm]
+symbol = " "
+
+[fossil_branch]
+symbol = " "
+
+[git_branch]
+symbol = " "
+style = "bg:#76562f"
+format = '[[ $symbol $branch ](bg:#76562f fg:#f4f1e8)]($style)'
+
+[git_status]
+style = "fg:#76562f"
+format = '[[( $all_status$ahead_behind )](bg:#76562f fg:#f4f1e8)]($style)'
 
 [golang]
+style = "fg:#368cf9"
 symbol = " "
+
+[guix_shell]
+symbol = " "
+
+[haskell]
+symbol = " "
+
+[haxe]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[hostname]
+ssh_symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
 
 [lua]
 symbol = " "
 
+[memory_usage]
+symbol = "󰍛 "
+
+[meson]
+symbol = "󰔷 "
+
+[nim]
+symbol = "󰆥 "
+
+[nix_shell]
+symbol = " "
+
 [nodejs]
 symbol = " "
 
-[odin]
-symbol = "󰟢 "
+[os.symbols]
+Alpaquita = " "
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+Artix = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "󰛓 "
+Gentoo = " "
+HardenedBSD = "󰞌 "
+Illumos = "󰈸 "
+Linux = " "
+Mabox = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = "󰈺 "
+openSUSE = " "
+OracleLinux = "󰌷 "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = "󰀘 "
+Solus = "󰠳 "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = "󰍲 "
+
+[package]
+symbol = "󰏗 "
+
+[pijul_channel]
+symbol = " "
 
 [python]
 symbol = " "
+style = "fg:#b58407"
+format = 'via [${symbol}${pyenv_prefix}(${version} )]($style)'
+
+[rlang]
+symbol = "󰟔 "
+
+[ruby]
+symbol = " "
 
 [rust]
-symbol = "󱘗 "
+symbol = " "
 
-[terraform]
-symbol = " "
+[scala]
+symbol = " "
 
-[zig]
-symbol = " "
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "fg:#000000"
+
+[username]
+format = '[ $user ]($style)'
+show_always = true
+style_root = "bg:#000000 fg:#f4f1e8"
+style_user = "bg:#000000 fg:#f4f1e8"

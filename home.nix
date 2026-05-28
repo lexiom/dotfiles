@@ -1,26 +1,14 @@
 { config, inputs, pkgs, ... }:
 
-let
-  tree-sitter-odin = pkgs.tree-sitter.buildGrammar {
-    language = "odin";
-    version = "1.3.0";
-    src = inputs.tree-sitter-odin;
-  };
-in {
+{
   home.username = "sysadmin";
   home.homeDirectory = "/home/sysadmin";
   home.stateVersion = "25.11";
   home.packages = with pkgs; [
     # Dependencies
-    cargo
     fd
     fzf
-    gcc
     jq
-    lua5_1
-    luarocks
-    nodejs
-    python3
     ripgrep
     unzip
 
@@ -32,11 +20,6 @@ in {
     tree
     zsh-autosuggestions
     zsh-vi-mode
-
-    # LSPs
-    bash-language-server
-    clang-tools
-    lua-language-server
   ];
 
   home.file = {
@@ -58,35 +41,11 @@ in {
     viAlias = true;
     vimAlias = true;
 
-    extraPackages = with pkgs.tree-sitter-grammars; [
-      tree-sitter-bash
-      tree-sitter-c
-      tree-sitter-cmake
-      tree-sitter-cpp
-      tree-sitter-css
-      tree-sitter-dockerfile
-      tree-sitter-go
-      tree-sitter-hcl
-      tree-sitter-html
-      tree-sitter-json
-      tree-sitter-lua
-      tree-sitter-markdown
-      tree-sitter-markdown-inline
-      tree-sitter-nix
-      tree-sitter-python
-      tree-sitter-rust
-      tree-sitter-sql
-      tree-sitter-toml
-      tree-sitter-typescript
-      tree-sitter-vim
-      tree-sitter-yaml
-      tree-sitter-odin
-    ];
-
     extraPython3Packages = ps: with ps; [
       pynvim
     ];
   };
+
   xdg.configFile = {
     "nvim" = {
       recursive = true;

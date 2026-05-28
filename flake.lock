@@ -40,25 +40,7 @@
     "root": {
       "inputs": {
         "home-manager": "home-manager",
-        "nixpkgs": "nixpkgs",
-        "tree-sitter-odin": "tree-sitter-odin"
-      }
-    },
-    "tree-sitter-odin": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1734912029,
-        "narHash": "sha256-vlw5XaHTdsgO9H4y8z0u0faYzs+L3UZPhqhD/IJ6khY=",
-        "owner": "tree-sitter-grammars",
-        "repo": "tree-sitter-odin",
-        "rev": "e8adc739b78409a99f8c31313f0bb54cc538cf73",
-        "type": "github"
-      },
-      "original": {
-        "owner": "tree-sitter-grammars",
-        "ref": "v1.3.0",
-        "repo": "tree-sitter-odin",
-        "type": "github"
+        "nixpkgs": "nixpkgs"
       }
     }
   },
