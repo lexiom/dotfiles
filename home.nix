@@ -11,6 +11,7 @@
     jq
     ripgrep
     unzip
+    zip
 
     # Utilities 
     direnv
