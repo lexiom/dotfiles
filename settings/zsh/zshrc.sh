@@ -6,13 +6,17 @@ if [[ -t 0 ]]; then
   stty -ixon
 fi
 
+# Auto start tmux
+if [[ -z "$TMUX" && $- == *i* ]]; then
+  exec tmux new-session -A -s main
+fi
+
 # Load completion system
 autoload -Uz compinit
 compinit
 
 # Sourcing plugins
 source "$ZDOTDIR/plugins.zsh"
-eval "$(direnv hook zsh)"
 
 # Don't record duplicates in history
 setopt HIST_IGNORE_DUPS
@@ -26,7 +30,6 @@ SAVEHIST=1000
 # Environment variables
 export CLICOLOR=1
 export GIT_CONFIG_GLOBAL="$HOME/.config/git/.gitconfig"
-export KUBECONFIG="${HOME}/.kube/config-k3s"
 export XDG_CONFIG_HOME="${HOME}/.config"
 
 # Aliases

@@ -13,8 +13,7 @@
     enable = true;
     casks = [
       "ghostty"
-      "hammerspoon"
-      "rectangle"
+      "nikitabobko/tap/aerospace"
       "ungoogled-chromium"
     ];
   };

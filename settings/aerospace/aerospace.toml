@@ -1,0 +1,103 @@
+config-version = 2
+
+start-at-login = true
+
+# Tile windows by default.
+default-root-container-layout = 'tiles'
+
+# Side-by-side layout on normal widescreen displays.
+default-root-container-orientation = 'horizontal'
+
+# Auto center the mouse pointer at the window being focused
+on-focus-changed = ['move-mouse window-lazy-center']
+
+# Set external monitor (main) as primary display
+[workspace-to-monitor-force-assignment]
+1 = ['main', 'built-in']
+2 = ['main', 'built-in']
+3 = ['main', 'built-in']
+4 = ['main', 'built-in']
+5 = ['main', 'built-in']
+6 = ['main', 'built-in']
+7 = ['main', 'built-in']
+8 = ['main', 'built-in']
+9 = ['main', 'built-in']
+
+# 2px gap between tiled windows.
+[gaps]
+inner.horizontal = 2
+inner.vertical = 2
+outer.left = 0
+outer.right = 0
+outer.top = 0
+outer.bottom = 0
+
+# Arrange Chromium Personal profile in workspace 1
+[[on-window-detected]]
+if.app-id = 'org.chromium.Chromium'
+if.window-title-regex-substring = 'Personal'
+run = 'move-node-to-workspace 1'
+
+# Arrange Ghostty in workspace 1
+[[on-window-detected]]
+if.app-id = 'com.mitchellh.ghostty'
+run = 'move-node-to-workspace 1'
+
+# Arrange Chromium Work profile in workspace 2
+[[on-window-detected]]
+if.app-id = 'org.chromium.Chromium'
+if.window-title-regex-substring = 'Work'
+run = 'move-node-to-workspace 2'
+
+# Arrange KeePassXC in workspace 3
+[[on-window-detected]]
+if.app-id = 'org.keepassxc.keepassxc'
+run = 'move-node-to-workspace 3'
+
+# Arrange Finder in workspace 3
+[[on-window-detected]]
+if.app-id = 'com.apple.finder'
+run = 'move-node-to-workspace 3'
+
+# Arrange Apple Music in workspace 4
+[[on-window-detected]]
+if.app-id = 'com.apple.music'
+run = 'move-node-to-workspace 4'
+
+# Reload config using Cmd + Ctrl + -
+[mode.main.binding]
+cmd-ctrl-minus = 'reload-config'
+
+# Chromium
+cmd-1 = [
+  'layout h_tiles',
+  'exec-and-forget open -a Chromium'
+]
+
+# Ghostty
+cmd-2 = [
+  'workspace 1',
+  'layout h_tiles',
+  'exec-and-forget open -a Ghostty'
+]
+
+# Finder
+cmd-3 = [
+  'workspace 3',
+  'layout v_tiles',
+  'exec-and-forget open -a Finder'
+]
+
+# KeePassXC
+cmd-4 = [
+  'workspace 3',
+  'layout h_tiles',
+  'exec-and-forget open -a KeePassXC'
+]
+
+# Apple Music
+cmd-5 = [
+  'workspace 4',
+  'layout h_tiles',
+  'exec-and-forget open -a Music'
+]

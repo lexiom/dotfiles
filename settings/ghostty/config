@@ -18,9 +18,9 @@ window-title-font-family = "IosevkaTermSlab Nerd Font Mono"
 # window-inherit-font-size = true
 
 # keybindings
-keybind = cmd+k>h=previous_tab
-keybind = cmd+k>j=new_tab
-keybind = cmd+k>l=next_tab
+# keybind = cmd+k>h=previous_tab
+# keybind = cmd+k>j=new_tab
+# keybind = cmd+k>l=next_tab
 
 # layout
 # background-opacity = 0.95
