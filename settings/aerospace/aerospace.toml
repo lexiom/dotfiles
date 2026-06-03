@@ -32,10 +32,9 @@ outer.right = 0
 outer.top = 0
 outer.bottom = 0
 
-# Arrange Chromium Personal profile in workspace 1
+# Arrange Safari in workspace 1
 [[on-window-detected]]
-if.app-id = 'org.chromium.Chromium'
-if.window-title-regex-substring = 'Personal'
+if.app-id = 'com.apple.safari'
 run = 'move-node-to-workspace 1'
 
 # Arrange Ghostty in workspace 1
@@ -43,35 +42,37 @@ run = 'move-node-to-workspace 1'
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 1'
 
-# Arrange Chromium Work profile in workspace 2
+# Arrange Chromium in workspace 2
 [[on-window-detected]]
 if.app-id = 'org.chromium.Chromium'
-if.window-title-regex-substring = 'Work'
 run = 'move-node-to-workspace 2'
 
-# Arrange KeePassXC in workspace 3
-[[on-window-detected]]
-if.app-id = 'org.keepassxc.keepassxc'
-run = 'move-node-to-workspace 3'
-
-# Arrange Finder in workspace 3
+# Arrange Finder in workspace 2
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
-run = 'move-node-to-workspace 3'
+run = 'move-node-to-workspace 2'
 
-# Arrange Apple Music in workspace 4
+# Arrange Apple Music in workspace 3
 [[on-window-detected]]
 if.app-id = 'com.apple.music'
+run = 'move-node-to-workspace 3'
+
+# Arrange KeePassXC in workspace 4
+[[on-window-detected]]
+if.app-id = 'org.keepassxc.keepassxc'
 run = 'move-node-to-workspace 4'
 
 # Reload config using Cmd + Ctrl + -
 [mode.main.binding]
+alt-h = 'focus left'
+alt-l = 'focus right'
 cmd-ctrl-minus = 'reload-config'
 
-# Chromium
+# Safari
 cmd-1 = [
+  'workspace 1',
   'layout h_tiles',
-  'exec-and-forget open -a Chromium'
+  'exec-and-forget open -a Safari'
 ]
 
 # Ghostty
@@ -81,23 +82,30 @@ cmd-2 = [
   'exec-and-forget open -a Ghostty'
 ]
 
-# Finder
+# Chromium
 cmd-3 = [
-  'workspace 3',
-  'layout v_tiles',
+  'workspace 2',
+  'layout h_tiles',
+  'exec-and-forget open -a Chromium'
+]
+
+# Finder
+cmd-4 = [
+  'workspace 2',
+  'layout h_tiles',
   'exec-and-forget open -a Finder'
 ]
 
-# KeePassXC
-cmd-4 = [
+# Music
+cmd-5 = [
   'workspace 3',
   'layout h_tiles',
-  'exec-and-forget open -a KeePassXC'
+  'exec-and-forget open -a Music'
 ]
 
-# Apple Music
-cmd-5 = [
+# KeePassXC
+cmd-shift-1 = [
   'workspace 4',
   'layout h_tiles',
-  'exec-and-forget open -a Music'
+  'exec-and-forget open -a KeePassXC'
 ]
