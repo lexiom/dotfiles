@@ -21,14 +21,15 @@ window-title-font-family = "IosevkaTermSlab Nerd Font Mono"
 # keybind = cmd+k>h=previous_tab
 # keybind = cmd+k>j=new_tab
 # keybind = cmd+k>l=next_tab
+macos-option-as-alt = true
+key-remap = super=alt
 
 # layout
 # background-opacity = 0.95
 macos-titlebar-style = tabs
 # maximize = true
 theme = "Parchment"
-# window-padding-x = 420
-window-padding-x = 15
+window-padding-x = 10
 
 # shell
 clipboard-read = allow

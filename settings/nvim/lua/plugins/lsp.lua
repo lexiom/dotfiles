@@ -88,49 +88,6 @@ return {
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, "[T]oggle Inlay [H]ints")
           end
-
-          -- Clangd specific settings
-          if client and client.name == "clangd" then
-            -- Perform some actions on save
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              buffer = event.buf,
-              callback = function()
-                -- Format code on save
-                vim.lsp.buf.format { async = false, id = event.data.client_id }
-              end,
-            })
-          end
-
-          -- Ruff specific settings
-          if client and client.name == "ruff" then
-            -- Perform some actions on save
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              buffer = event.buf,
-              callback = function()
-                -- Format code on save
-                vim.lsp.buf.format { async = false, id = event.data.client_id }
-                -- Apply ruff's "Fix All" code action
-                vim.lsp.buf.code_action {
-                  ---@diagnostic disable-next-line: missing-fields 
-                  context = { only = { "source.fixAll" } },
-                  apply = true,
-                }
-              end,
-            })
-          end
-
-          -- Terraform language server specific settings
-          if client and client.name == "terraformls" then
-            -- Perform some actions on save
-            vim.api.nvim_create_autocmd("BufWritePre", {
-              buffer = event.buf,
-              callback = function()
-                -- Format code on save
-                vim.lsp.buf.format { async = false, id = event.data.client_id }
-              end,
-            })
-          end
-
         end,
       })
 
@@ -163,87 +120,6 @@ return {
         },
       }
 
-      -- Enable the following language servers
-      -- Feel free to add/remove any LSPs that you want here. They will automatically be installed
-      -- Add any additional override configuration in the following tables. Available keys are:
-      --   - cmd (table): Override the default command used to start the server
-      --   - filetypes (table): Override the default list of associated filetypes for the server
-      --   - capabilities (table): Override fields in capabilities. Can be used to disable certain LSP features
-      --   - settings (table): Override the default settings passed when initializing the server
-      -- For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
-      local servers = {
-        -- Bash
-        bashls = {},
-
-        -- C & C++
-        clangd = {},
-
-        -- Docker
-        dockerls = {
-          settings = {
-            docker = {
-              languageserver = {
-                formatter = {
-                  ignoreMultilineInstructions = true,
-                },
-              },
-            },
-          },
-        },
-
-        -- Go
-        gopls = {},
-
-        -- Lua
-        lua_ls = {
-          settings = {
-            Lua = {
-              completion = {
-                callSnippet = "Replace",
-              },
-              -- You can toggle below to ignore Lua_LS"s noisy `missing-fields` warnings
-              diagnostics = { disable = { "missing-fields" } },
-            },
-          },
-        },
-
-        -- JSON
-        jsonls = {
-          json = {
-            validate = { enable = true },
-          },
-        },
-
-        -- Odin
-        ols = {},
-
-        -- Python
-        ruff = {},
-        ty = {},
-
-        -- Terraform
-        terraformls = {},
-
-        -- YAML
-        yamlls = {
-          yaml = {
-            schemaStore = { enable = false },
-            validate = true,
-          },
-        },
-      }
-
-      local capabilities = vim.lsp.protocol.make_client_capabilities()
-      for server_name, server in pairs(servers) do
-        server.capabilities = vim.tbl_deep_extend(
-          "force",
-          {},
-          capabilities,
-          server.capabilities or {}
-        )
-        vim.lsp.config(server_name, server)
-        vim.lsp.enable(server_name)
-      end
     end,
   },
 }

@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    ghostty-bin
     wget
   ];
 
@@ -12,7 +13,6 @@
   homebrew = {
     enable = true;
     casks = [
-      "ghostty"
       "nikitabobko/tap/aerospace"
       "ungoogled-chromium"
     ];
@@ -44,8 +44,6 @@
         MJConfigFile = "~/.config/hammerspoon/init.lua";
       };
       NSGlobalDomain = {
-        # Double click a window's title bar to: Fill.
-        AppleActionOnDoubleClick = "Fill";
         # When switching to an application, switch to a Space with open windows for the application.
         AppleSpacesSwitchOnActivate = true;
         # Close windows when quitting an application.
@@ -98,9 +96,9 @@
       # Tiled windows have margins.
       EnableTiledWindowMargins = false;
       # Drag windows to screen edges to tile.
-      EnableTilingByEdgeDrag = true;
+      EnableTilingByEdgeDrag = false;
       # Drag windows to menu bar to fill screen.
-      EnableTopTilingByEdgeDrag = true;
+      EnableTopTilingByEdgeDrag = false;
       # Enable Stage Manager.
       GloballyEnabled = false;
       # Show desktop items in Stage Manager.

@@ -155,3 +155,15 @@ vim.keymap.set("n", "<Esc>", "<cmd>nohlsearch<CR>")
 
 -- Diagnostic keymaps
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+-- Open netrw
+vim.keymap.set("n", "<M-k>j", ":Texplore<CR>", { desc = "Open netrw" })
+
+-- Go to the previous tab
+vim.keymap.set("n", "<M-k>h", "gT", { desc = "Previous tab" })
+
+-- Go to the next tab
+vim.keymap.set("n", "<M-k>l", "gt", { desc = "Next tab" })
+
+-- Close tab
+vim.keymap.set("n", "<M-k>k", ":q<CR>", { desc = "Close tab" })

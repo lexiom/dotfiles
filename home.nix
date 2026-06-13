@@ -70,8 +70,8 @@
         ZVM_CLIPBOARD_COPY_CMD=pbcopy
         ZVM_CLIPBOARD_PASTE_CMD=pbpaste
       }
-      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
 
+      source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
       eval "$(direnv hook zsh)"
     '';
   };

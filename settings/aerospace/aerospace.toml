@@ -1,5 +1,8 @@
-config-version = 2
+###########
+# General #
+###########
 
+config-version = 2
 start-at-login = true
 
 # Tile windows by default.
@@ -10,6 +13,10 @@ default-root-container-orientation = 'horizontal'
 
 # Auto center the mouse pointer at the window being focused
 on-focus-changed = ['move-mouse window-lazy-center']
+
+############
+# Monitors #
+############
 
 # Set external monitor (main) as primary display
 [workspace-to-monitor-force-assignment]
@@ -23,6 +30,10 @@ on-focus-changed = ['move-mouse window-lazy-center']
 8 = ['main', 'built-in']
 9 = ['main', 'built-in']
 
+########
+# Gaps #
+########
+
 # 2px gap between tiled windows.
 [gaps]
 inner.horizontal = 2
@@ -32,35 +43,37 @@ outer.right = 0
 outer.top = 0
 outer.bottom = 0
 
-# Arrange Safari in workspace 1
-[[on-window-detected]]
-if.app-id = 'com.apple.safari'
-run = 'move-node-to-workspace 1'
+################
+# Window Rules #
+################
 
-# Arrange Ghostty in workspace 1
 [[on-window-detected]]
 if.app-id = 'com.mitchellh.ghostty'
 run = 'move-node-to-workspace 1'
 
-# Arrange Chromium in workspace 2
 [[on-window-detected]]
 if.app-id = 'org.chromium.Chromium'
 run = 'move-node-to-workspace 2'
 
-# Arrange Finder in workspace 2
 [[on-window-detected]]
 if.app-id = 'com.apple.finder'
-run = 'move-node-to-workspace 2'
-
-# Arrange Apple Music in workspace 3
-[[on-window-detected]]
-if.app-id = 'com.apple.music'
 run = 'move-node-to-workspace 3'
 
-# Arrange KeePassXC in workspace 4
 [[on-window-detected]]
 if.app-id = 'org.keepassxc.keepassxc'
 run = 'move-node-to-workspace 4'
+
+[[on-window-detected]]
+if.app-id = 'com.apple.music'
+run = 'move-node-to-workspace 5'
+
+[[on-window-detected]]
+if.app-id = "com.valvesoftware.steam"
+run = "layout floating"
+
+[[on-window-detected]]
+if.app-id = "com.libretro.dist.RetroArch"
+run = "layout floating"
 
 # Reload config using Cmd + Ctrl + -
 [mode.main.binding]
@@ -68,44 +81,42 @@ alt-h = 'focus left'
 alt-l = 'focus right'
 cmd-ctrl-minus = 'reload-config'
 
-# Safari
-cmd-1 = [
-  'workspace 1',
-  'layout h_tiles',
-  'exec-and-forget open -a Safari'
-]
+
+###############
+# Keybindings #
+###############
 
 # Ghostty
-cmd-2 = [
+cmd-1 = [
   'workspace 1',
   'layout h_tiles',
   'exec-and-forget open -a Ghostty'
 ]
 
 # Chromium
-cmd-3 = [
+cmd-2 = [
   'workspace 2',
   'layout h_tiles',
   'exec-and-forget open -a Chromium'
 ]
 
 # Finder
-cmd-4 = [
-  'workspace 2',
+cmd-3 = [
+  'workspace 3',
   'layout h_tiles',
   'exec-and-forget open -a Finder'
 ]
 
-# Music
-cmd-5 = [
-  'workspace 3',
-  'layout h_tiles',
-  'exec-and-forget open -a Music'
-]
-
 # KeePassXC
-cmd-shift-1 = [
+cmd-4 = [
   'workspace 4',
   'layout h_tiles',
   'exec-and-forget open -a KeePassXC'
+]
+
+# Music
+cmd-5 = [
+  'workspace 5',
+  'layout h_tiles',
+  'exec-and-forget open -a Music'
 ]
