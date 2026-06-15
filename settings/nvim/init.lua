@@ -20,6 +20,9 @@ vim.cmd("filetype plugin indent on")
 -- OPTIONS --
 -------------
 
+-- Truecolor mode
+vim.opt.termguicolors = true
+
 -- Every wrapped line continues visually indented (same amount of space as the beginning of that line)
 vim.o.breakindent = true
 

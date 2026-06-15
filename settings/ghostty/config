@@ -21,8 +21,9 @@ window-title-font-family = "IosevkaTermSlab Nerd Font Mono"
 # keybind = cmd+k>h=previous_tab
 # keybind = cmd+k>j=new_tab
 # keybind = cmd+k>l=next_tab
-macos-option-as-alt = true
+keybind = ctrl+shift+v=paste_from_clipboard
 key-remap = super=alt
+macos-option-as-alt = true
 
 # layout
 # background-opacity = 0.95
