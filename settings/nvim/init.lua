@@ -12,9 +12,16 @@ vim.g.maplocalleader = " "
 -- Set the local path to Python's pynvim package
 vim.g.python3_host_prog = '~/.local/share/pynvim/venv/bin/python3'
 
+-- Enable syntax highlighting
+vim.cmd("syntax enable")
+vim.cmd("filetype plugin indent on")
+
 -------------
 -- OPTIONS --
 -------------
+
+-- Truecolor mode
+vim.opt.termguicolors = true
 
 -- Every wrapped line continues visually indented (same amount of space as the beginning of that line)
 vim.o.breakindent = true
@@ -71,7 +78,18 @@ vim.o.wrap = false
 -- Remove this option if you want your OS clipboard to remain independent
 -- See `:help "clipboard"`
 vim.schedule(function()
-  vim.o.clipboard = "unnamed,unnamedplus"
+  vim.opt.clipboard = "unnamedplus"
+  vim.g.clipboard = {
+    name = "OSC 52",
+    copy = {
+      ["+"] = require("vim.ui.clipboard.osc52").copy("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").copy("*"),
+    },
+    paste = {
+      ["+"] = require("vim.ui.clipboard.osc52").paste("+"),
+      ["*"] = require("vim.ui.clipboard.osc52").paste("*"),
+    },
+  }
 end)
 
 --------------
@@ -136,6 +154,10 @@ require("lazy").setup({
   require("plugins.lsp"),
   require("plugins.nav"),
   require("plugins.ui"),
+}, {
+  rocks = {
+    enabled = false,
+  },
 })
 
 -------------

@@ -15,6 +15,7 @@ local c = {
   bg         = "#f4f1e8", -- main background
   fg         = "#000000", -- main foreground
 
+  parchment0 = "#b4aaa0", -- "#b0a59b", -- non characters
   parchment1 = "#e4dece", -- subtle background
   parchment2 = "#dccdb4", -- selection / borders
   parchment3 = "#8f7654", -- comments / secondary text
@@ -59,6 +60,9 @@ set(0, "Directory",    { fg = c.fg, bold = true })
 set(0, "Title",        { fg = c.fg, bold = true })
 set(0, "Question",     { fg = c.fg, bold = true })
 set(0, "MoreMsg",      { fg = c.fg, bold = true })
+
+set(0, "Whitespace", { fg = c.parchment0 })
+set(0, "EndOfBuffer", { fg = c.parchment0 })
 
 -- Diagnostics
 -- Still monochromatic: severity is expressed by weight/underline, not hue.
@@ -105,7 +109,7 @@ set(0, "Typedef",      { fg = c.fg, bold = true })
 
 set(0, "Special",     { fg = c.parchment4 })
 set(0, "SpecialChar", { fg = c.parchment4 })
-set(0, "Delimiter",   { fg = c.parchment4 })
+set(0, "Delimiter",   { fg = c.parchment5 })
 
 set(0, "Todo", { fg = c.fg, bg = c.parchment2, bold = true })
 
@@ -147,7 +151,9 @@ set(0, "@string",      { link = "String" })
 set(0, "@number",      { link = "Number" })
 set(0, "@boolean",     { link = "Boolean" })
 set(0, "@operator",    { link = "Operator" })
-set(0, "@punctuation", { fg = c.parchment4 })
+
+set(0, "@punctuation", { fg = c.parchment5 })
+set(0, "@punctuation.delimiter", { fg = c.parchment5 })
 
 -- LSP semantic tokens
 set(0, "@lsp.type.function",  { fg = c.fg, bold = true })

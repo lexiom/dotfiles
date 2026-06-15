@@ -1,18 +1,12 @@
 # Only run in interactive shells
 [[ -o interactive ]] || return
 
-# Auto-start tmux on interactive SSH sessions
-if [[ -n "$SSH_CONNECTION" && -z "$TMUX" && $- == *i* ]]; then
-  exec tmux new-session -A -s main
-fi
-
 # Load completion system
 autoload -Uz compinit
 compinit
 
 # Sourcing plugins
 source "$ZDOTDIR/plugins.zsh"
-eval "$(direnv hook zsh)"
 
 # Don't record duplicates in history
 setopt HIST_IGNORE_DUPS
@@ -30,11 +24,6 @@ export XDG_CONFIG_HOME="${HOME}/.config"
 
 # Aliases
 alias cleanup='rm ~/.zsh_history && history -p && touch ~/.zsh_history && exit'
-
-# Auto-start tmux on interactive SSH sessions
-if [[ -n "$SSH_CONNECTION" && -z "$TMUX" && $- == *i* ]]; then
-  exec tmux new-session -A -s main
-fi
 
 # Starship
 if [[ -z ${STARSHIP_SHELL-} ]]; then

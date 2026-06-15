@@ -1,5 +1,5 @@
 return {
-  {
+ {
     dir = vim.fn.stdpath('config'),
     name = 'parchment',
     lazy = false, -- makes sure it's loaded on startup
