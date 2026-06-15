@@ -1,13 +1,21 @@
+# Global
+Host *
+  AddKeysToAgent yes
+  ServerAliveInterval 60
+  ServerAliveCountMax 3
+  TCPKeepAlive yes
+  UseKeychain yes
+
+# Personal GitHub
 Host github-personal
   HostName github.com
   IdentitiesOnly yes
-  IdentityAgent $SSH_AUTH_SOCK
-  IdentityFile ~/.ssh/id_personal.pub
+  IdentityFile ~/.ssh/id_personal
   User git
 
+# Work GitHub
 Host github-work
   HostName github.com
   IdentitiesOnly yes
-  IdentityAgent $SSH_AUTH_SOCK
-  IdentityFile ~/.ssh/id_work.pub
+  IdentityFile ~/.ssh/id_work
   User git

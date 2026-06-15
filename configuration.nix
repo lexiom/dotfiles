@@ -1,11 +1,11 @@
-{ config, pkgs, vmName, ... }:
+{ config, pkgs, ... }:
 
 {
   # LVM support.
   boot.initrd.services.lvm.enable = true;
 
   # Set kernel version.
-  boot.kernelPackages = pkgs.linuxPackages_6_18;
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   # Use the systemd-boot EFI boot loader.
   boot.loader.systemd-boot.enable = true;
@@ -28,16 +28,7 @@
   };
 
   # Define your hostname.
-  networking.hostName = vmName;
-
-  # Setting up network.
-  networking.defaultGateway = "10.0.0.1";
-  networking.nameservers = [
-    "10.0.0.1"
-  ];
-
-  # Disable DHCP.
-  networking.useDHCP = false;
+  networking.hostName = "nixos";
 
   # Enable Nix Flakes.
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -53,17 +44,14 @@
   # Enable the OpenSSH daemon.
   services.openssh.enable = true;
 
-  # Enable QEMU Guest Agent.
-  services.qemuGuest.enable = true;
-
   # Pin NixOS version.
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 
   # Set your time zone.
   time.timeZone = "America/Sao_Paulo";
 
   # Define a user account.
-  users.users.sysadmin = {
+  users.users.sysadm = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     shell = pkgs.zsh;
