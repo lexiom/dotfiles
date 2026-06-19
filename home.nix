@@ -41,7 +41,10 @@
   };
 
   xdg.configFile = {
-    "aerospace/aerospace.toml".source = ./settings/aerospace/aerospace.toml;
+    "aerospace" = {
+      recursive = true;
+      source = ./settings/aerospace;
+    };
     "ghostty" = {
       recursive = true;
       source = ./settings/ghostty;

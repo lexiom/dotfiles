@@ -53,7 +53,7 @@ symbol = " "
 [directory]
 style = "bg:#4f3721 fg:#f4f1e8"
 format = "[ $path ]($style)"
-truncation_length = 4
+truncation_length = 3
 truncation_symbol = "…/"
 read_only = " 󰌾"
 

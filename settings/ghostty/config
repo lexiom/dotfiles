@@ -1,38 +1,38 @@
-# cursor
+## cursor
 adjust-cursor-height = -3
 adjust-cursor-thickness = 3
-cursor-invert-fg-bg = false
 cursor-color = #0e1116
+cursor-invert-fg-bg = false
 cursor-text = #ffffff
 
-# font
+## font
 font-family = "IosevkaTermSlab Nerd Font Mono"
 font-feature = -calt
 font-feature = -dlig
 font-feature = -liga
-font-size = 17
+font-size = 18
 font-style = "Medium"
 font-thicken = true
 font-thicken-strength = 255
 window-title-font-family = "IosevkaTermSlab Nerd Font Mono"
 # window-inherit-font-size = true
 
-# keybindings
-# keybind = cmd+k>h=previous_tab
+## keybindings
 # keybind = cmd+k>j=new_tab
-# keybind = cmd+k>l=next_tab
-keybind = ctrl+shift+v=paste_from_clipboard
-key-remap = super=alt
-macos-option-as-alt = true
+# keybind = ctrl+shift+v=paste_from_clipboard
 
-# layout
+## key remaps
+macos-option-as-alt = true
+key-remap = super=alt
+
+## layout
 # background-opacity = 0.95
-macos-titlebar-style = tabs
 # maximize = true
+macos-titlebar-style = tabs
 theme = "Parchment"
 window-padding-x = 10
 
-# shell
+## shell
 clipboard-read = allow
 clipboard-write = allow
 shell-integration-features = ssh-env

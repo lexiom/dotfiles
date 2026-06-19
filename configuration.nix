@@ -77,7 +77,7 @@
       # Show suggested and recent apps in Dock.
       show-recents = false;
       # Dock size.
-      tilesize = 56;
+      tilesize = 64;
       # Hot corner actions (1: disabled).
       wvous-tl-corner = 1;
       wvous-tr-corner = 1;
