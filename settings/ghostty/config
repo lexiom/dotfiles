@@ -1,9 +1,9 @@
 ## cursor
 adjust-cursor-height = -3
 adjust-cursor-thickness = 3
-cursor-color = #0e1116
+cursor-color = #000000
 cursor-invert-fg-bg = false
-cursor-text = #ffffff
+cursor-text = #f2f2f2
 
 ## font
 font-family = "IosevkaTermSlab Nerd Font Mono"
@@ -29,7 +29,7 @@ key-remap = super=alt
 # background-opacity = 0.95
 # maximize = true
 macos-titlebar-style = tabs
-theme = "Parchment"
+theme = "Grayscale"
 window-padding-x = 10
 
 ## shell

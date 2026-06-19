@@ -6,7 +6,7 @@ return {
     priority = 1000, -- makes sure it's loaded before everything else
     config = function()
       vim.o.background = "light"
-      require("themes.colorscheme.parchment")
+      require("themes.colorscheme.grayscale")
     end,
   },
   { -- Statusline
@@ -15,7 +15,7 @@ return {
     config = function()
       require("lualine").setup({
         options = {
-          theme = require("themes.lualine.parchment"),
+          theme = require("themes.lualine.grayscale"),
           icons_enabled = false,
         },
       })

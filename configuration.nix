@@ -2,6 +2,7 @@
 
 {
   environment.systemPackages = with pkgs; [
+    aerospace
     ghostty-bin
     wget
   ];
@@ -13,7 +14,6 @@
   homebrew = {
     enable = true;
     casks = [
-      "nikitabobko/tap/aerospace"
       "ungoogled-chromium"
     ];
   };
