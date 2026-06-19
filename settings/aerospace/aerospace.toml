@@ -30,6 +30,7 @@ on-focus-changed = ['move-mouse window-lazy-center']
 8 = ['main', 'built-in']
 9 = ['main', 'built-in']
 
+
 ########
 # Gaps #
 ########
@@ -43,25 +44,10 @@ outer.right = 0
 outer.top = 0
 outer.bottom = 0
 
+
 ################
 # Window Rules #
 ################
-
-# [[on-window-detected]]
-# if.app-id = 'com.mitchellh.ghostty'
-# run = 'exec-and-forget ~/.config/aerospace/move-window.sh Ghostty'
-#
-# [[on-window-detected]]
-# if.app-id = 'org.chromium.Chromium'
-# run = 'exec-and-forget ~/.config/aerospace/move-window.sh Chromium'
-#
-# [[on-window-detected]]
-# if.app-id = 'com.apple.finder'
-# run = 'exec-and-forget ~/.config/aerospace/move-window.sh Finder'
-#
-# [[on-window-detected]]
-# if.app-id = 'com.apple.music'
-# run = 'exec-and-forget ~/.config/aerospace/move-window.sh Music'
 
 [[on-window-detected]]
 if.app-id = "com.valvesoftware.steam"
@@ -73,9 +59,8 @@ run = "layout floating"
 
 # Reload config using Cmd + Ctrl + -
 [mode.main.binding]
-alt-h = 'focus left'
-alt-l = 'focus right'
 cmd-ctrl-minus = 'reload-config'
+
 
 ##########################
 # Keybindings - Vertical #
