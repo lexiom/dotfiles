@@ -140,8 +140,7 @@ rtp:prepend(lazypath)
 -------------
 
 require("lazy").setup({
-  require("plugins.lsp"),
-  require("plugins.nav"),
+  require("plugins.code"),
   require("plugins.ui"),
 }, {
   rocks = {

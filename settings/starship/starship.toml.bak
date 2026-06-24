@@ -1,12 +1,12 @@
 format = """
-[](#1b1b1b)\
+[](#000000)\
 $username\
-[](bg:#2b2b2b fg:#1b1b1b)\
+[](bg:#3a3a3a fg:#000000)\
 $directory\
-[](bg:#454545 fg:#2b2b2b)\
+[](bg:#767676 fg:#3a3a3a)\
 $git_branch\
 $git_status\
-[ ](fg:#454545)\
+[ ](fg:#767676)\
 $aws\
 $dart\
 $docker_context\
@@ -40,9 +40,9 @@ symbol = " "
 symbol = " "
 
 [character]
-success_symbol = "[➜](bold #c5c5c5)"
-error_symbol = "[](bold #c5c5c5)"
-vimcmd_symbol = "[](bold #c5c5c5)"
+success_symbol = "[➜](bold #000000)"
+error_symbol = "[](bold #000000)"
+vimcmd_symbol = "[](bold #000000)"
 
 [conda]
 symbol = " "
@@ -51,14 +51,14 @@ symbol = " "
 symbol = " "
 
 [directory]
-style = "bg:#2b2b2b fg:#f2f2f2"
+style = "bg:#3a3a3a fg:#f2f2f2"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 read_only = " 󰌾"
 
 [docker_context]
-style = "fg:#2b2b2b"
+style = "fg:#3a3a3a"
 symbol = " "
 
 [elixir]
@@ -72,12 +72,12 @@ symbol = " "
 
 [git_branch]
 symbol = " "
-style = "bg:#454545"
-format = '[[ $symbol $branch ](bg:#454545 fg:#f2f2f2)]($style)'
+style = "bg:#767676"
+format = '[[ $symbol $branch ](bg:#767676 fg:#f2f2f2)]($style)'
 
 [git_status]
-style = "fg:#454545"
-format = '[[( $all_status$ahead_behind )](bg:#454545 fg:#f2f2f2)]($style)'
+style = "fg:#767676"
+format = '[[( $all_status$ahead_behind )](bg:#767676 fg:#f2f2f2)]($style)'
 
 [golang]
 style = "fg:#368cf9"
@@ -189,10 +189,10 @@ symbol = " "
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "fg:#f2f2f2"
+style = "fg:#000000"
 
 [username]
 format = '[ $user ]($style)'
 show_always = true
-style_root = "bg:#1b1b1b fg:#f2f2f2"
-style_user = "bg:#1b1b1b fg:#f2f2f2"
+style_root = "bg:#000000 fg:#f2f2f2"
+style_user = "bg:#000000 fg:#f2f2f2"

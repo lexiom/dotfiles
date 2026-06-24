@@ -7,10 +7,6 @@
     wget
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.iosevka-term-slab
-  ];
-
   homebrew = {
     enable = true;
     casks = [

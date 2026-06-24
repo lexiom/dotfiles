@@ -35,7 +35,7 @@ on-focus-changed = ['move-mouse window-lazy-center']
 # Gaps #
 ########
 
-# 2px gap between tiled windows.
+# 1px gap between tiled windows.
 [gaps]
 inner.horizontal = 0
 inner.vertical = 1
@@ -69,75 +69,34 @@ cmd-ctrl-minus = 'reload-config'
 # Chromium
 cmd-1 = [
   'workspace 1',
-  'layout v_tiles',
   'exec-and-forget open -a Chromium',
   'move-node-to-workspace 1',
 ]
 
 # Ghostty
 cmd-2 = [
-  'workspace 1',
-  'layout v_tiles',
+  'workspace 2',
   'exec-and-forget open -a Ghostty',
-  'move-node-to-workspace 1',
+  'move-node-to-workspace 2',
 ]
 
 # Finder
 cmd-3 = [
-  'workspace 2',
-  'layout v_tiles',
+  'workspace 3',
   'exec-and-forget open -a Finder',
-  'move-node-to-workspace 2',
+  'move-node-to-workspace 3',
 ]
 
 # Music
 cmd-4 = [
-  'workspace 2',
-  'layout v_tiles',
+  'workspace 4',
   'exec-and-forget open -a Music',
-  'move-node-to-workspace 2'
+  'move-node-to-workspace 4'
 ]
 
 # Organize
 cmd-minus = [
   'workspace 1',
-  'layout v_tiles',
   'focus --dfs-index 0',
-  'resize height 880'
-]
-
-############################
-# Keybindings - Horizontal #
-############################
-
-# Chromium
-cmd-alt-1 = [
-  'workspace 1',
-  'layout h_tiles',
-  'exec-and-forget open -a Chromium',
-  'move-node-to-workspace 1'
-]
-
-# Ghostty
-cmd-alt-2 = [
-  'workspace 2',
-  'layout h_tiles',
-  'exec-and-forget open -a Ghostty',
-  'move-node-to-workspace 2'
-]
-
-# Finder
-cmd-alt-3 = [
-  'workspace 3',
-  'layout h_tiles',
-  'exec-and-forget open -a Finder',
-  'move-node-to-workspace 3'
-]
-
-# Music
-cmd-alt-4 = [
-  'workspace 4',
-  'layout h_tiles',
-  'exec-and-forget open -a Music',
-  'move-node-to-workspace 4'
+  'resize height 880',
 ]

@@ -10,6 +10,7 @@
     fzf
     jq
     ripgrep
+    tree-sitter
 
     # Utilities
     direnv
@@ -17,13 +18,18 @@
     starship
     tmux
     tree
-    wakeonlan
+    # wakeonlan
     zsh-autosuggestions
     zsh-vi-mode
 
     # Apps
     keepassxc
     monitorcontrol
+
+    # Work
+    actionlint
+    gh
+    yq
   ];
 
   home.file = {

@@ -1,12 +1,12 @@
 return {
  {
     dir = vim.fn.stdpath('config'),
-    name = 'parchment',
+    name = 'grayscale',
     lazy = false, -- makes sure it's loaded on startup
     priority = 1000, -- makes sure it's loaded before everything else
     config = function()
-      vim.o.background = "light"
-      require("themes.colorscheme.grayscale")
+      vim.o.background = "dark"
+      require("themes.colorscheme.grayscale-dark")
     end,
   },
   { -- Statusline
@@ -15,7 +15,7 @@ return {
     config = function()
       require("lualine").setup({
         options = {
-          theme = require("themes.lualine.grayscale"),
+          theme = require("themes.lualine.grayscale-dark"),
           icons_enabled = false,
         },
       })
