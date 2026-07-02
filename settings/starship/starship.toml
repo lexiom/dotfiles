@@ -1,27 +1,22 @@
 format = """
-[](#1b1b1b)\
+[](#000000)\
 $username\
-[](bg:#2b2b2b fg:#1b1b1b)\
+[](bg:#3f3f3f fg:#000000)\
 $directory\
-[](bg:#454545 fg:#2b2b2b)\
+[](bg:#585858 fg:#3f3f3f)\
 $git_branch\
 $git_status\
-[ ](fg:#454545)\
+[ ](fg:#585858)\
 $aws\
-$dart\
 $docker_context\
+$nix_shell\
 $elixir\
-$elm\
 $golang\
-$haskell\
 $java\
-$julia\
 $lua\
 $nodejs\
-$nim\
 $python\
 $rust\
-$scala\
 $time\
 $line_break\
 $character
@@ -33,67 +28,37 @@ add_newline = true
 [aws]
 symbol = " "
 
-[buf]
-symbol = " "
-
-[c]
-symbol = " "
-
 [character]
-success_symbol = "[➜](bold #c5c5c5)"
-error_symbol = "[](bold #c5c5c5)"
-vimcmd_symbol = "[](bold #c5c5c5)"
-
-[conda]
-symbol = " "
-
-[dart]
-symbol = " "
+success_symbol = "[>](bold #000000)"
+error_symbol = "[x](bold #000000)"
+vimcmd_symbol = "[_](bold #000000)"
 
 [directory]
-style = "bg:#2b2b2b fg:#f2f2f2"
+style = "bg:#3f3f3f fg:#f2f2f2"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
 read_only = " 󰌾"
 
 [docker_context]
-style = "fg:#2b2b2b"
+style = "fg:#"
 symbol = " "
 
 [elixir]
 symbol = " "
 
-[elm]
-symbol = " "
-
-[fossil_branch]
-symbol = " "
-
 [git_branch]
 symbol = " "
-style = "bg:#454545"
-format = '[[ $symbol $branch ](bg:#454545 fg:#f2f2f2)]($style)'
+style = "bg:#585858"
+format = '[[ $symbol $branch ](bg:#585858 fg:#f2f2f2)]($style)'
 
 [git_status]
-style = "fg:#454545"
-format = '[[( $all_status$ahead_behind )](bg:#454545 fg:#f2f2f2)]($style)'
+style = "fg:#585858"
+format = '[[( $all_status$ahead_behind )](bg:#585858 fg:#f2f2f2)]($style)'
 
 [golang]
-style = "fg:#368cf9"
+style = "fg:#000000"
 symbol = " "
-
-[guix_shell]
-symbol = " "
-
-[haskell]
-symbol = " "
-
-[haxe]
-symbol = " "
-
-[hg_branch]
-symbol = " "
 
 [hostname]
 ssh_symbol = " "
@@ -101,98 +66,32 @@ ssh_symbol = " "
 [java]
 symbol = " "
 
-[julia]
-symbol = " "
-
 [lua]
 symbol = " "
 
-[memory_usage]
-symbol = "󰍛 "
-
-[meson]
-symbol = "󰔷 "
-
-[nim]
-symbol = "󰆥 "
-
 [nix_shell]
 symbol = " "
+impure_msg = ""
+pure_msg = ""
 
 [nodejs]
 symbol = " "
 
-[os.symbols]
-Alpaquita = " "
-Alpine = " "
-Amazon = " "
-Android = " "
-Arch = " "
-Artix = " "
-CentOS = " "
-Debian = " "
-DragonFly = " "
-Emscripten = " "
-EndeavourOS = " "
-Fedora = " "
-FreeBSD = " "
-Garuda = "󰛓 "
-Gentoo = " "
-HardenedBSD = "󰞌 "
-Illumos = "󰈸 "
-Linux = " "
-Mabox = " "
-Macos = " "
-Manjaro = " "
-Mariner = " "
-MidnightBSD = " "
-Mint = " "
-NetBSD = " "
-NixOS = " "
-OpenBSD = "󰈺 "
-openSUSE = " "
-OracleLinux = "󰌷 "
-Pop = " "
-Raspbian = " "
-Redhat = " "
-RedHatEnterprise = " "
-Redox = "󰀘 "
-Solus = "󰠳 "
-SUSE = " "
-Ubuntu = " "
-Unknown = " "
-Windows = "󰍲 "
-
-[package]
-symbol = "󰏗 "
-
-[pijul_channel]
-symbol = " "
-
 [python]
 symbol = " "
-style = "fg:#b58407"
+style = "fg:#000000"
 format = 'via [${symbol}${pyenv_prefix}(${version} )]($style)'
-
-[rlang]
-symbol = "󰟔 "
-
-[ruby]
-symbol = " "
 
 [rust]
 symbol = " "
 
-[scala]
-symbol = " "
-
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "fg:#f2f2f2"
+style = "fg:#000000"
 
 [username]
 format = '[ $user ]($style)'
 show_always = true
-style_root = "bg:#1b1b1b fg:#f2f2f2"
-style_user = "bg:#1b1b1b fg:#f2f2f2"
+style_root = "bg:#000000 fg:#f2f2f2"
+style_user = "bg:#000000 fg:#f2f2f2"

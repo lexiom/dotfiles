@@ -7,17 +7,25 @@
 touch .envrc
 ```
 
-2. Then add `use flake .` to it:
+2. Then, add `use flake .` to it:
 
 ```sh
 # ~/project-root/.envrc
 use flake .
 ```
 
-You can add the `--impure` flag to cache reevaluations:
+Also, you can add the `--impure` flag to cache reevaluations:
 
 ```sh
 # ~/project-root/.envrc
+use flake . --impure
+```
+
+To disable automatic rebuilds on every change, add this:
+
+```sh
+# ~/project-root/.envrc
+nix_direnv_manual_reload
 use flake . --impure
 ```
 

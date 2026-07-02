@@ -13,12 +13,9 @@
     tree-sitter
 
     # Utilities
-    direnv
-    nix-direnv
     starship
     tmux
     tree
-    # wakeonlan
     zsh-autosuggestions
     zsh-vi-mode
 
@@ -28,7 +25,13 @@
 
     # Work
     actionlint
+    colima
+    docker-client
+    docker-credential-helpers
+    docker-buildx
     gh
+    google-cloud-sdk
+    tenv
     yq
   ];
 
@@ -37,6 +40,17 @@
     ".ssh/config".source = ./settings/ssh/config;
     ".tmux.conf".source = ./settings/tmux/tmux.conf;
     ".zshenv".source = ./settings/zsh/zshenv.sh;
+  };
+
+  programs.direnv = {
+    enable = true;
+    nix-direnv.enable = true;
+
+    config = {
+      global = {
+        warn_timeout = "30s";
+      };
+    };
   };
 
   programs.neovim = {

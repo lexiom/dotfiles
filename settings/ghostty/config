@@ -1,19 +1,20 @@
 ## cursor
 adjust-cursor-height = -3
 adjust-cursor-thickness = 3
-cursor-color = #f2f2f2
+cursor-color = #000000
 cursor-invert-fg-bg = false
-cursor-text = #000000
+cursor-text = #f2f2f2
 
 ## font
-font-family = "IosevkaTerm Nerd Font Mono"
-font-family-bold = "IosevkaTerm Nerd Font Mono"
-font-family-italic = "IosevkaTerm Nerd Font Mono"
+font-family = "Iosevka Term"
 font-feature = -calt
 font-feature = -dlig
 font-feature = -liga
-font-size = 20
-font-style = "ExtraLight"
+font-style = "Bold"
+font-style-italic = "Bold Italic"
+font-style-bold = "Heavy"
+font-style-bold-italic = "Heavy Italic"
+font-size = 19
 
 ## keybindings
 # keybind = cmd+k>j=new_tab
@@ -25,8 +26,7 @@ key-remap = super=alt
 
 ## layout
 macos-titlebar-style = tabs
-theme = "GrayscaleDark"
-# window-padding-x = 10
+theme = "GrayscaleLight"
 
 ## shell
 clipboard-read = allow

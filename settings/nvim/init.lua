@@ -9,8 +9,13 @@ vim.g.have_nerd_font = true
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Set the local path to Python's pynvim package
-vim.g.python3_host_prog = '~/.local/share/pynvim/venv/bin/python3'
+-- Fix python indentation
+vim.g.python_indent = {
+  open_paren = "shiftwidth()",
+  nested_paren = "shiftwidth()",
+  continue = "shiftwidth()",
+  closed_paren_align_last_line = false,
+}
 
 -- Enable syntax highlighting
 vim.cmd("syntax enable")
@@ -33,6 +38,7 @@ vim.o.cursorline = true
 vim.o.expandtab = true
 vim.o.shiftwidth = 4
 vim.o.tabstop = 4
+vim.opt.smartindent = false
 
 -- Case-insensitive searching unless \C or one or more capital letters in the search term
 -- vim.o.ignorecase = true

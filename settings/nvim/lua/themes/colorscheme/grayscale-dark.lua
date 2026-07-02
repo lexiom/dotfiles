@@ -28,7 +28,7 @@ set(0, "Normal",       { fg = c.fg, bg = c.bg })
 set(0, "NormalFloat",  { fg = c.fg, bg = c.grayscale1 })
 set(0, "FloatBorder",  { fg = c.grayscale4, bg = c.grayscale1 })
 
-set(0, "Cursor",       { fg = c.bg, bg = c.grayscale5 })
+set(0, "Cursor",       { fg = c.bg, bg = c.grayscale4 })
 set(0, "CursorLine",   { bg = c.grayscale1 })
 set(0, "CursorColumn", { bg = c.grayscale1 })
 
