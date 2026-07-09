@@ -17,12 +17,11 @@ font-style-bold-italic = "Heavy Italic"
 font-size = 19
 
 ## keybindings
-# keybind = cmd+k>j=new_tab
 keybind = ctrl+shift+v=paste_from_clipboard
 
 ## key remaps
-macos-option-as-alt = true
 key-remap = super=alt
+macos-option-as-alt = true
 
 ## layout
 macos-titlebar-style = tabs

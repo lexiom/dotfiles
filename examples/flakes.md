@@ -44,22 +44,32 @@
 ```nix
 {
   description = "Odin development environment";
+  inputs.nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
 
-  inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
-  };
-
+  # Overriding LLVM Nixpkgs version to match what Odin currently needs
   outputs = { self, nixpkgs }:
     let
       system = "aarch64-darwin";
-      pkgs = import nixpkgs { inherit system; };
-    in
-    {
+      overlays = [
+        (final: prev: {
+          odin = prev.odin.override {
+            llvmPackages_18 = prev.llvmPackages_21;
+          };
+        })
+      ];
+      pkgs = import nixpkgs {
+        inherit system overlays;
+      };
+      llvm = pkgs.llvmPackages_21;
+    in {
       devShells.${system}.default = pkgs.mkShell {
-        packages = with pkgs; [
-          lldb
-          odin
-          raylib
+        packages = [
+          pkgs.odin
+          pkgs.raylib
+
+          llvm.clang
+          llvm.lldb
+          llvm.bintools
         ];
       };
     };
