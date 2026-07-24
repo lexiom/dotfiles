@@ -10,6 +10,8 @@
   homebrew = {
     enable = true;
     casks = [
+      "monitorcontrol"
+      "keepassxc"
       "ungoogled-chromium"
     ];
   };

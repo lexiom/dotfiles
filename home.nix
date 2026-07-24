@@ -20,10 +20,6 @@
     zsh-autosuggestions
     zsh-vi-mode
 
-    # Apps
-    keepassxc
-    monitorcontrol
-
     # Work
     actionlint
     colima
