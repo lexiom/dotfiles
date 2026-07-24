@@ -13,6 +13,7 @@
     tree-sitter
 
     # Utilities
+    lima
     starship
     tmux
     tree
