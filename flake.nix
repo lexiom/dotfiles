@@ -1,14 +1,21 @@
 {
   description = "macOS";
   inputs = {
-    nixpkgs.url = "github:NixOS/nixpkgs/nixpkgs-unstable";
+    nixpkgs.url = "https://flakehub.com/f/NixOS/nixpkgs/0.1";
+  
     nix-darwin = {
+      url = "https://flakehub.com/f/nix-darwin/nix-darwin/0.1";
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-darwin/nix-darwin/master";
     };
+  
     home-manager = {
+      url = "github:nix-community/home-manager/master";
       inputs.nixpkgs.follows = "nixpkgs";
-      url = "github:nix-community/home-manager";
+    };
+  
+    determinate = {
+      url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
@@ -19,6 +26,8 @@
     darwinConfigurations."macos" = nix-darwin.lib.darwinSystem {
       specialArgs = { inherit self inputs; };
       modules = [
+        inputs.determinate.darwinModules.default
+
         ./configuration.nix
 
         home-manager.darwinModules.home-manager

@@ -6,6 +6,30 @@
     "specialArgs": "_module.specialArgs"
   },
   "assertions": "assertions",
+  "determinate-nix": "determinate-nix",
+  "determinateNix": {
+    "buildMachines": "determinateNix.buildMachines",
+    "customSettings": "determinateNix.customSettings",
+    "determinateNixd": "determinateNix.determinateNixd",
+    "distributedBuilds": "determinateNix.distributedBuilds",
+    "enable": "determinateNix.enable",
+    "envVars": "determinateNix.envVars",
+    "nixosVmBasedLinuxBuilder": {
+      "config": "determinateNix.nixosVmBasedLinuxBuilder.config",
+      "enable": "determinateNix.nixosVmBasedLinuxBuilder.enable",
+      "ephemeral": "determinateNix.nixosVmBasedLinuxBuilder.ephemeral",
+      "hostName": "determinateNix.nixosVmBasedLinuxBuilder.hostName",
+      "mandatoryFeatures": "determinateNix.nixosVmBasedLinuxBuilder.mandatoryFeatures",
+      "maxJobs": "determinateNix.nixosVmBasedLinuxBuilder.maxJobs",
+      "package": "determinateNix.nixosVmBasedLinuxBuilder.package",
+      "protocol": "determinateNix.nixosVmBasedLinuxBuilder.protocol",
+      "speedFactor": "determinateNix.nixosVmBasedLinuxBuilder.speedFactor",
+      "supportedFeatures": "determinateNix.nixosVmBasedLinuxBuilder.supportedFeatures",
+      "systems": "determinateNix.nixosVmBasedLinuxBuilder.systems",
+      "workingDirectory": "determinateNix.nixosVmBasedLinuxBuilder.workingDirectory"
+    },
+    "registry": "determinateNix.registry"
+  },
   "documentation": {
     "doc": {
       "enable": "documentation.doc.enable"
@@ -248,6 +272,13 @@
       "enableCompletion": "programs.bash.enableCompletion",
       "interactiveShellInit": "programs.bash.interactiveShellInit"
     },
+    "devenv": {
+      "enable": "programs.devenv.enable",
+      "enableBashIntegration": "programs.devenv.enableBashIntegration",
+      "enableFishIntegration": "programs.devenv.enableFishIntegration",
+      "enableZshIntegration": "programs.devenv.enableZshIntegration",
+      "package": "programs.devenv.package"
+    },
     "direnv": {
       "direnvrcExtra": "programs.direnv.direnvrcExtra",
       "enable": "programs.direnv.enable",
@@ -299,6 +330,14 @@
     },
     "man": {
       "enable": "programs.man.enable"
+    },
+    "mas": {
+      "cleanup": "programs.mas.cleanup",
+      "enable": "programs.mas.enable",
+      "package": "programs.mas.package",
+      "packages": "programs.mas.packages",
+      "update": "programs.mas.update",
+      "user": "programs.mas.user"
     },
     "nix-index": {
       "enable": "programs.nix-index.enable",
@@ -973,8 +1012,10 @@
       },
       "remapCapsLockToControl": "system.keyboard.remapCapsLockToControl",
       "remapCapsLockToEscape": "system.keyboard.remapCapsLockToEscape",
+      "swapCapsLockAndEscape": "system.keyboard.swapCapsLockAndEscape",
       "swapLeftCommandAndLeftAlt": "system.keyboard.swapLeftCommandAndLeftAlt",
       "swapLeftCtrlAndFn": "system.keyboard.swapLeftCtrlAndFn",
+      "swapRightCommandAndRightOption": "system.keyboard.swapRightCommandAndRightOption",
       "userKeyMapping": "system.keyboard.userKeyMapping"
     },
     "maxStateVersion": "system.maxStateVersion",

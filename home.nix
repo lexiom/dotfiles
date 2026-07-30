@@ -8,6 +8,7 @@
     # Dependencies
     fd
     fzf
+    git
     jq
     ripgrep
     tree-sitter

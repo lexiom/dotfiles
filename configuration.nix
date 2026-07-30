@@ -1,15 +1,36 @@
 { pkgs, self, ... }:
 
 {
+  determinateNix = {
+    enable = true;
+    customSettings = {
+      # Set download buffer to 256 MB.
+      download-buffer-size = 268435456;
+    };
+  };
+
   environment.systemPackages = with pkgs; [
-    aerospace
     ghostty-bin
     wget
   ];
 
+  fonts.packages = with pkgs; [
+    (iosevka-bin.override {
+      variant = "SGr-IosevkaTerm";
+    })
+    nerd-fonts.symbols-only
+  ];
+
   homebrew = {
     enable = true;
+    taps = [
+      {
+        name = "nikitabobko/tap";
+        trusted = true;
+      }
+    ];
     casks = [
+      "aerospace"
       "monitorcontrol"
       "keepassxc"
       "ungoogled-chromium"
@@ -17,16 +38,6 @@
   };
 
   networking.hostName = "macos";
-
-  nix = {
-    enable = true;
-    settings = {
-      # Set download buffer to 256MB.
-      download-buffer-size = 268435456;
-      # Necessary for using flakes on this system.
-      experimental-features = "nix-command flakes";
-    };
-  };
 
   security.sudo.extraConfig = ''
     Defaults pwfeedback
@@ -110,7 +121,7 @@
   system.primaryUser = "alexandre";
 
   # For backwards compatibility, check the changelog before changing (darwin-rebuild changelog)
-  system.stateVersion = 6;
+  system.stateVersion = 7;
 
   users.users.alexandre = {
     home = "/Users/alexandre";
