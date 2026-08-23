@@ -66,18 +66,25 @@ cmd-ctrl-minus = 'reload-config'
 # Keybindings - Vertical #
 ##########################
 
-# Chromium
-cmd-1 = [
+# Ghostty
+cmd-0 = [
   'workspace 1',
-  'exec-and-forget open -a Chromium',
+  'exec-and-forget open -a Ghostty',
   'move-node-to-workspace 1',
 ]
 
-# Ghostty
+# Safari
+cmd-1 = [
+  'workspace 2',
+  'exec-and-forget open -a Safari',
+  'move-node-to-workspace 2',
+]
+
+# ChatGPT Classic
 cmd-2 = [
   'workspace 2',
-  'exec-and-forget open -a Ghostty',
-  'move-node-to-workspace 2',
+  'exec-and-forget open -a "ChatGPT Classic"',
+  'move-node-to-workspace 2'
 ]
 
 # Finder
@@ -91,6 +98,13 @@ cmd-3 = [
 cmd-4 = [
   'workspace 4',
   'exec-and-forget open -a Music',
+  'move-node-to-workspace 4'
+]
+
+# YouTube
+cmd-5 = [
+  'workspace 4',
+  'exec-and-forget open -a YouTube',
   'move-node-to-workspace 4'
 ]
 

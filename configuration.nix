@@ -23,17 +23,19 @@
 
   homebrew = {
     enable = true;
-    taps = [
-      {
-        name = "nikitabobko/tap";
-        trusted = true;
-      }
+    brews = [
+     "mole"
     ];
     casks = [
       "aerospace"
       "monitorcontrol"
       "keepassxc"
-      "ungoogled-chromium"
+    ];
+    taps = [
+      {
+        name = "nikitabobko/tap";
+        trusted = true;
+      }
     ];
   };
 
@@ -115,6 +117,11 @@
       # Show desktop items on desktop.
       StandardHideDesktopIcons = false;
     };
+  };
+
+  system.keyboard = {
+    enableKeyMapping = true;
+    remapCapsLockToEscape = true;
   };
 
   # System's default user.
