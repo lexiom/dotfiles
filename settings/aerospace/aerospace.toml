@@ -109,7 +109,7 @@ cmd-5 = [
 ]
 
 # Organize
-cmd-minus = [
+cmd-shift-minus = [
   'workspace 1',
   'focus --dfs-index 0',
   'resize height 880',

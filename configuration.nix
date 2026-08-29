@@ -41,6 +41,8 @@
 
   networking.hostName = "macos";
 
+  nix.enable = false;
+
   security.sudo.extraConfig = ''
     Defaults pwfeedback
   '';

@@ -1,12 +1,12 @@
 format = """
 [](#000000)\
 $username\
-[](bg:#3f3f3f fg:#000000)\
+[](bg:#404040 fg:#000000)\
 $directory\
-[](bg:#585858 fg:#3f3f3f)\
+[](bg:#808080 fg:#404040)\
 $git_branch\
 $git_status\
-[ ](fg:#585858)\
+[ ](fg:#808080)\
 $aws\
 $docker_context\
 $nix_shell\
@@ -34,7 +34,7 @@ error_symbol = "[x](bold #000000)"
 vimcmd_symbol = "[_](bold #000000)"
 
 [directory]
-style = "bg:#3f3f3f fg:#f2f2f2"
+style = "bg:#404040 fg:#f0f0f0"
 format = "[ $path ]($style)"
 truncation_length = 3
 truncation_symbol = "…/"
@@ -49,12 +49,12 @@ symbol = " "
 
 [git_branch]
 symbol = " "
-style = "bg:#585858"
-format = '[[ $symbol $branch ](bg:#585858 fg:#f2f2f2)]($style)'
+style = "bg:#808080"
+format = '[[ $symbol $branch ](bg:#808080 fg:#f0f0f0)]($style)'
 
 [git_status]
-style = "fg:#585858"
-format = '[[( $all_status$ahead_behind )](bg:#585858 fg:#f2f2f2)]($style)'
+style = "fg:#808080"
+format = '[[( $all_status$ahead_behind )](bg:#808080 fg:#f0f0f0)]($style)'
 
 [golang]
 style = "fg:#000000"
@@ -93,5 +93,5 @@ style = "fg:#000000"
 [username]
 format = '[ $user ]($style)'
 show_always = true
-style_root = "bg:#000000 fg:#f2f2f2"
-style_user = "bg:#000000 fg:#f2f2f2"
+style_root = "bg:#000000 fg:#f0f0f0"
+style_user = "bg:#000000 fg:#f0f0f0"

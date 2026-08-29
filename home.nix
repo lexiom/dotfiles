@@ -76,7 +76,7 @@
     "zsh/.zshrc".source = ./settings/zsh/zshrc.sh;
     "zsh/plugins.zsh".text = ''
       # zsh-autosuggestions configuration
-      typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#999999'
+      typeset -g ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=#808080'
       ZSH_AUTOSUGGEST_STRATEGY=(history completion)
       source ${pkgs.zsh-autosuggestions}/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.plugin.zsh
 
