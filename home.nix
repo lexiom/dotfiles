@@ -90,6 +90,8 @@
         ZVM_SYSTEM_CLIPBOARD_ENABLED=true
         ZVM_CLIPBOARD_COPY_CMD=pbcopy
         ZVM_CLIPBOARD_PASTE_CMD=pbpaste
+        ZVM_VI_HIGHLIGHT_BACKGROUND='#707070'
+        ZVM_VI_HIGHLIGHT_FOREGROUND='#f0f0f0'
       }
 
       source ${pkgs.zsh-vi-mode}/share/zsh-vi-mode/zsh-vi-mode.plugin.zsh
