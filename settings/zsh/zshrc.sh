@@ -29,9 +29,11 @@ SAVEHIST=1000
 
 # Environment variables
 export CLICOLOR=1
-export GIT_CONFIG_GLOBAL="$HOME/.config/git/.gitconfig"
-export XDG_CONFIG_HOME="${HOME}/.config"
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
+export EDITOR="nvim"
+export GIT_CONFIG_GLOBAL="$HOME/.config/git/.gitconfig"
+export VISUAL="nvim"
+export XDG_CONFIG_HOME="${HOME}/.config"
 
 # Aliases
 alias cleanup='rm ~/.zsh_history && history -p && touch ~/.zsh_history && exit'

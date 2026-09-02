@@ -14,7 +14,8 @@
     tree-sitter
 
     # Utilities
-    lima
+    ipcalc
+    lima-full
     starship
     tmux
     tree
