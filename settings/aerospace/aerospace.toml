@@ -101,10 +101,10 @@ cmd-4 = [
   'move-node-to-workspace 4'
 ]
 
-# YouTube
+# Grayjay
 cmd-5 = [
   'workspace 4',
-  'exec-and-forget open -a YouTube',
+  'exec-and-forget open -a Grayjay',
   'move-node-to-workspace 4'
 ]
 

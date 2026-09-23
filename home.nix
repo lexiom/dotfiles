@@ -5,33 +5,40 @@
   home.homeDirectory = "/Users/alexandre";
   home.stateVersion = "26.05";
   home.packages = with pkgs; [
-    # Dependencies
+    # Basic Dependencies
     fd
     fzf
     git
-    jq
     ripgrep
     tree-sitter
 
-    # Utilities
+    # Common Utilities
+    dos2unix
     ipcalc
+    jq
     lima-full
     starship
     tmux
     tree
+    yq
+
+    # Container Tools
+    colima
+    docker-buildx
+    docker-client
+    docker-credential-helpers
+
+    # Extensions & Plug-ins
+    shellcheck
+    shfmt
     zsh-autosuggestions
     zsh-vi-mode
 
-    # Work
+    # Work Specific
     actionlint
-    colima
-    docker-client
-    docker-credential-helpers
-    docker-buildx
     gh
     google-cloud-sdk
     tenv
-    yq
   ];
 
   home.file = {
@@ -39,6 +46,12 @@
     ".ssh/config".source = ./settings/ssh/config;
     ".tmux.conf".source = ./settings/tmux/tmux.conf;
     ".zshenv".source = ./settings/zsh/zshenv.sh;
+  };
+
+  manual = {
+    manpages.enable = false;
+    html.enable = false;
+    json.enable = false;
   };
 
   programs.direnv = {

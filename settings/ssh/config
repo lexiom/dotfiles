@@ -1,10 +1,18 @@
 # Global
 Host *
   AddKeysToAgent yes
-  ServerAliveInterval 60
   ServerAliveCountMax 3
+  ServerAliveInterval 60
   TCPKeepAlive yes
   UseKeychain yes
+
+# LLM Agent
+Host agent
+  ForwardAgent no
+  HostName localhost
+  IdentitiesOnly yes
+  IdentityFile ~/.ssh/id_agent
+  User agent
 
 # Personal GitHub
 Host github-personal

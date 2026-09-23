@@ -9,16 +9,26 @@ return {
     event = "InsertEnter",
     config = true,
   },
-  { -- Syntax highlighting (requires tree-sitter CLI installed).
-    "romus204/tree-sitter-manager.nvim",
-    dependencies = {},
+  { -- Tree-sitter parsers and queries (requires tree-sitter CLI).
+    "nvim-treesitter/nvim-treesitter",
+    lazy = false,
+    build = ":TSUpdate",
     config = function()
-      require("tree-sitter-manager").setup({
-          ensure_installed = {
-              "asm", "bash", "c", "cpp", "dockerfile", "json",
-              "odin", "python", "terraform", "toml", "yaml",
-          },
-          nerdfont = false,
+      local treesitter = require("nvim-treesitter")
+      treesitter.setup()
+      treesitter.install({
+        "asm",
+        "bash",
+        "c",
+        "cpp",
+        "dockerfile",
+        "json",
+        "nix",
+        "odin",
+        "python",
+        "terraform",
+        "toml",
+        "yaml",
       })
     end,
   },

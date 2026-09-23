@@ -7,26 +7,26 @@
       url = "https://flakehub.com/f/nix-darwin/nix-darwin/0.1";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-  
-    home-manager = {
-      url = "github:nix-community/home-manager/master";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-  
+
     determinate = {
       url = "https://flakehub.com/f/DeterminateSystems/determinate/3";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    home-manager = {
+      url = "github:nix-community/home-manager/master";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = inputs@{ self, nix-darwin, home-manager, ... }:
+  outputs = inputs@{ self, nixpkgs, nix-darwin, determinate, home-manager, ... }:
   {
     # Build darwin flake using:
     # $ darwin-rebuild build --flake .#macos
     darwinConfigurations."macos" = nix-darwin.lib.darwinSystem {
       specialArgs = { inherit self inputs; };
       modules = [
-        inputs.determinate.darwinModules.default
+        determinate.darwinModules.default
 
         ./configuration.nix
 

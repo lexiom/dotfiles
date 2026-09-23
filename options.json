@@ -783,6 +783,7 @@
         "AppleMeasurementUnits": "system.defaults.NSGlobalDomain.AppleMeasurementUnits",
         "AppleMetricUnits": "system.defaults.NSGlobalDomain.AppleMetricUnits",
         "ApplePressAndHoldEnabled": "system.defaults.NSGlobalDomain.ApplePressAndHoldEnabled",
+        "AppleReduceDesktopTinting": "system.defaults.NSGlobalDomain.AppleReduceDesktopTinting",
         "AppleScrollerPagingBehavior": "system.defaults.NSGlobalDomain.AppleScrollerPagingBehavior",
         "AppleShowAllExtensions": "system.defaults.NSGlobalDomain.AppleShowAllExtensions",
         "AppleShowAllFiles": "system.defaults.NSGlobalDomain.AppleShowAllFiles",
@@ -928,6 +929,7 @@
       "loginwindow": {
         "DisableConsoleAccess": "system.defaults.loginwindow.DisableConsoleAccess",
         "GuestEnabled": "system.defaults.loginwindow.GuestEnabled",
+        "HideUserAvatarAndName": "system.defaults.loginwindow.HideUserAvatarAndName",
         "LoginwindowText": "system.defaults.loginwindow.LoginwindowText",
         "PowerOffDisabledWhileLoggedIn": "system.defaults.loginwindow.PowerOffDisabledWhileLoggedIn",
         "RestartDisabled": "system.defaults.loginwindow.RestartDisabled",
@@ -1019,6 +1021,10 @@
       "userKeyMapping": "system.keyboard.userKeyMapping"
     },
     "maxStateVersion": "system.maxStateVersion",
+    "newsyslog": {
+      "enable": "system.newsyslog.enable",
+      "files": "system.newsyslog.files"
+    },
     "nixpkgsRelease": "system.nixpkgsRelease",
     "nixpkgsRevision": "system.nixpkgsRevision",
     "nixpkgsVersion": "system.nixpkgsVersion",

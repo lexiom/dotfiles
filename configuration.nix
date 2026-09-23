@@ -1,7 +1,8 @@
 { pkgs, self, ... }:
 
-{
+{ 
   determinateNix = {
+    # ensure compatibility between nix-darwin and Determinate
     enable = true;
     customSettings = {
       # Set download buffer to 256 MB.
@@ -40,7 +41,19 @@
   };
 
   networking.hostName = "macos";
-  nix.enable = false;
+
+  services.openssh = {
+    enable = true;
+    extraConfig = ''
+      AllowAgentForwarding no
+      AllowTcpForwarding no
+      AllowUsers agent
+      KbdInteractiveAuthentication no
+      PasswordAuthentication no
+      PermitRootLogin no
+      X11Forwarding no
+    '';
+  };
 
   security.sudo.extraConfig = ''
     Defaults pwfeedback
