@@ -41,6 +41,7 @@
             inherit inputs;
           };
           home-manager.users.alexandre = import ./home.nix;
+          home-manager.users.agent = import ./agent.nix;
         }
       ];
     };

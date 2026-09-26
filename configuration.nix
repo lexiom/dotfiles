@@ -147,4 +147,8 @@
   users.users.alexandre = {
     home = "/Users/alexandre";
   };
+
+  users.users.agent = {
+    home = "/Users/agent";
+  };
 }

@@ -6,11 +6,6 @@ if [[ -t 0 ]]; then
   stty -ixon
 fi
 
-# Auto start tmux
-if [[ -z "$TMUX" && $- == *i* ]]; then
-  exec tmux new-session -A -s main
-fi
-
 # Load completion system
 autoload -Uz compinit
 compinit
@@ -34,9 +29,18 @@ export EDITOR="nvim"
 export GIT_CONFIG_GLOBAL="${HOME}/.config/git/.gitconfig"
 export VISUAL="nvim"
 export XDG_CONFIG_HOME="${HOME}/.config"
+export PATH="${HOME}/.local/bin:${PATH}"
 
 # Aliases
 alias cleanup='rm ~/.zsh_history && history -p && touch ~/.zsh_history && exit'
+
+# Keychain configuration
+KEYCHAIN="${HOME}/Library/Keychains/login.keychain-db"
+
+if ! security show-keychain-info "$KEYCHAIN" >/dev/null 2>&1; then
+  echo "Unlocking agent keychain..."
+  security unlock-keychain "$KEYCHAIN"
+fi
 
 # Starship
 if [[ -z ${STARSHIP_SHELL-} ]]; then
