@@ -87,6 +87,16 @@ vim.schedule(function()
   vim.o.clipboard = "unnamed,unnamedplus"
 end)
 
+---------------
+-- FILETYPES --
+---------------
+
+vim.filetype.add({
+    extension = {
+        metal = "cpp",
+    },
+})
+
 --------------
 -- AUTOCMDS --
 --------------
@@ -123,6 +133,16 @@ vim.api.nvim_create_autocmd("FileType", {
   end
 })
 
+
+-- Use Tree-sitter indentation for Odin
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "odin",
+  callback = function()
+    vim.bo.indentexpr =
+      "v:lua.require'nvim-treesitter'.indentexpr()"
+  end,
+})
+
 ---------------
 -- LAZY.NVIM --
 ---------------
@@ -145,10 +165,17 @@ rtp:prepend(lazypath)
 -- MODULES --
 -------------
 
-require("lazy").setup({
+plugins = {
   require("plugins.code"),
   require("plugins.ui"),
-}, {
+}
+
+local ok, ai = pcall(require, "plugins.ai")
+if ok then
+  table.insert(plugins, ai)
+end
+
+require("lazy").setup(plugins, {
   rocks = {
     enabled = false,
   },

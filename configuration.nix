@@ -1,4 +1,4 @@
-{ pkgs, self, ... }:
+{ config, pkgs, self, ... }:
 
 { 
   determinateNix = {
@@ -23,18 +23,20 @@
   ];
 
   homebrew = {
+    # Ensures that XDG_CONFIG_HOME is correct when running as sudo
+    onActivation.extraEnv = {
+      XDG_CONFIG_HOME =
+        "${config.users.users.${config.system.primaryUser}.home}/.config";
+    };
     enable = true;
     brews = [
      "mole"
     ];
     casks = [
-      "aerospace"
-      "monitorcontrol"
       "keepassxc"
-    ];
-    taps = [
+      "monitorcontrol"
       {
-        name = "nikitabobko/tap";
+        name = "nikitabobko/tap/aerospace";
         trusted = true;
       }
     ];
