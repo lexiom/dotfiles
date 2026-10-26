@@ -20,6 +20,7 @@ on-focus-changed = ['move-mouse window-lazy-center']
 
 # Set external monitor (main) as primary display
 [workspace-to-monitor-force-assignment]
+0 = ['main', 'built-in']
 1 = ['main', 'built-in']
 2 = ['main', 'built-in']
 3 = ['main', 'built-in']
@@ -68,16 +69,16 @@ cmd-ctrl-minus = 'reload-config'
 
 # Ghostty
 cmd-0 = [
-  'workspace 1',
+  'workspace 0',
   'exec-and-forget open -a Ghostty',
-  'move-node-to-workspace 1',
+  'move-node-to-workspace 0',
 ]
 
 # Safari
 cmd-1 = [
-  'workspace 2',
+  'workspace 1',
   'exec-and-forget open -a Safari',
-  'move-node-to-workspace 2',
+  'move-node-to-workspace 1',
 ]
 
 # ChatGPT Classic
@@ -103,9 +104,9 @@ cmd-4 = [
 
 # Grayjay
 cmd-5 = [
-  'workspace 4',
+  'workspace 5',
   'exec-and-forget open -a Grayjay',
-  'move-node-to-workspace 4'
+  'move-node-to-workspace 5'
 ]
 
 # Organize

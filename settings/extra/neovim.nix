@@ -17,7 +17,7 @@
                   cursor_cli = {
                     defaults = {
                       session_config_options = {
-                        model = "grok-4.7-high",
+                        model = "grok-4.7",
                       },
                     },
                   },
@@ -27,6 +27,11 @@
             interactions = {
               chat = {
                 adapter = "cursor_cli",
+                tools = {
+                  opts = {
+                    approval_mode = "auto",
+                  },
+                },
               },
             },
             display = {

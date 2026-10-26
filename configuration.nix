@@ -34,7 +34,6 @@
     ];
     casks = [
       "keepassxc"
-      "monitorcontrol"
       {
         name = "nikitabobko/tap/aerospace";
         trusted = true;

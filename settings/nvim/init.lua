@@ -79,6 +79,16 @@ vim.o.updatetime = 250
 -- Disable line wrapping
 vim.o.wrap = false
 
+---------------
+-- CLIPBOARD --
+---------------
+
+-- Over SSH, use OSC 52 so the remote Neovim talks to the
+-- clipboard of the terminal running the SSH client.
+if vim.env.SSH_TTY then
+  vim.g.clipboard = "osc52"
+end
+
 -- Sync clipboard between OS and Neovim
 -- Schedule the setting after `UiEnter` because it can increase startup-time
 -- Remove this option if you want your OS clipboard to remain independent
